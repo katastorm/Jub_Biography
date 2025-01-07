@@ -2,20 +2,20 @@
 
 ## Description
 
-Jeu de création de vaisseau et d'exploration spatiale.
+Jeu de création de vaisseaux et d'exploration spatiale.
 
 ![](./medias/img1.jpg)
 
 ## Contexte
 
-J'étais très inspiré par le jeu `Crossout`, où le but est de créer des vehicules et d'affronter d'autres joueurs. Je commençais a avoir des bases solides sur Unity. Cependant l'idée du projet était de pouvoir créer des vaisseau spatials. Le moteur physique d'Unity étant vraiment fourni, ca a réduit le travail à juste développer un éditeur de vraisseau spatial. Après le RPG 3D, j'avais commencé à m'interesser à `FL-Studio`. Ce jeu a donc aussi été l'occasion de composer ma première musique de jeu.
+J'étais très inspiré par le jeu `Crossout`, où le but est de créer des vehicules et d'affronter d'autres joueurs. Je commençais a avoir des bases solides sur Unity. Cependant l'idée du projet était de pouvoir créer des vaisseaux spatiaux. Le moteur physique d'Unity étant vraiment fourni, ca a réduit le travail à juste développer un éditeur de vaisseaux. Après le RPG 3D, j'avais commencé à m'interesser à `FL-Studio`. Ce jeu a donc aussi été l'occasion de composer ma première musique de jeu.
 
 ## Développement
 
 Utilisation de *Blender* pour la première fois dans le but de faire des textures, des éléments pour les vaisseaux, des briques de constructions etc.
-L'interface de l'époque, avant la version 2.8 de *Blender* était absolument horrible et la courbe de progression était difficile. Beaucoups de fonctionnalités ont étés implémentés pour pouvoir construire ses vaisseaux, des propulseurs avec inputs clavier personalisés, des tourelles qui peuvent tirer à l'endroit ou on clic... 
+L'interface de l'époque, avant la version 2.8 de *Blender* était absolument horrible et la courbe de progression était difficile. Beaucoups de fonctionnalités ont étés implémentés pour pouvoir construire ses vaisseaux : des propulseurs avec inputs clavier personalisés, des tourelles qui peuvent tirer à l'endroit ou l'on clic... 
 
-Un prototype de génération de terrain à aussi était mis en place. Un des buts du projet était que l'ont puisse atterrir sur des planetes à terme, même si cette fonctionalité n'a jamais été implémentée. Les terrains de tests étaient générés de manière procédurale. C'était ma première génération de terrain, je ne connaissait pas les noises. J'ai donc utilisés des fonctions mathématiques chaotiques et des cossinus pour faire des colines.
+Un prototype de génération de terrain à aussi était mis en place. Un des buts du projet était que l'ont puisse atterrir sur des planetes, même si cette fonctionalité n'a jamais été implémentée. Les terrains de tests étaient générés de manière procédurale. C'était ma première génération de terrain, je ne connaissait pas les noises. J'ai donc utilisés des fonctions mathématiques chaotiques et des cossinus pour faire des colines.
 
 
 
