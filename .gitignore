@@ -22,9 +22,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 Excel/~$unityProjects.xlsx
-
-
-*.bat
-*.ps1
-README.md
-AnaliticsCreds.txt

@@ -28,7 +28,7 @@ function ProfilePage(props) {
     date: "2020-2023",
     desc: "Conception de prototypes innovants pour les opérateurs de centrales nucléaires",
     subdesc: [
-      "Veille puis conception de démonstrateur des différentes technologies existantes, VR WEB, XR multi-utilisateur en réseau...",
+      "Veille puis conception de démonstrateurs des différentes technologies existantes, VR WEB, XR multi-utilisateur en réseau...",
       "Comptes-rendus et exposés durant les avancés des projets, brainstormings, déplacements sur le terrain..."]
   }
 
@@ -103,11 +103,11 @@ return (
 
     <h2>A propos de moi</h2>
 
-    <p>Passioné d'informatique depuis mes 10 ans, j'ai acquis de grandes connaissances aux travers de mes études, mes projets persos et mes experiences professionelles. J'adore la nature, les vidéos en stop motion, la ceuillette aux champignons... Mais tout ça, ce n'est pas le plus important :
+    <p>Passionné d'informatique depuis mes 10 ans, j'ai acquis de grandes connaissances aux travers de mes études, mes projets persos et mes expériences professionelles. J'adore la nature, les vidéos en stop motion, la cueillette des champignons... Mais tout ça, ce n'est pas le plus important :
     </p>
 
 
-    <h2>Diplomes</h2>
+    <h2>Diplômes</h2>
 
 
     <table><thead>
@@ -121,18 +121,18 @@ return (
     </thead>
       <tbody>
         <tr>
-          <td>Dimplome d'ingénieur</td>
+          <td>Diplôme d'ingénieur</td>
           <td>Informatique & Applications en alternance</td>
           <td>2020-2023</td>
           <td>ESIEE PARIS</td>
-          <td>Champs sur marne</td>
+          <td>Champs sur Marne</td>
         </tr>
         <tr>
           <td>DUT informatique</td>
           <td>Informatique en alternance</td>
           <td>2018-2020</td>
           <td>UNIVERSITE GUSTAVE EIFFEL</td>
-          <td>Champs sur marne</td>
+          <td>Champs sur Marne</td>
         </tr>
         <tr>
           <td>BAC S</td>
