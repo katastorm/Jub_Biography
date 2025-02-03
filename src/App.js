@@ -100,8 +100,8 @@ const App = () => {
                 console.log("cant load from " + pat)
             }
         }
-
-        contentCopy.sort((proj1, proj2) => (proj1.creation.year * 100 + proj1.creation.month) - (proj2.creation.year * 100 + proj2.creation.month));
+        //Tri dans le sens décroissant
+        contentCopy.sort((proj1, proj2) => (proj2.creation.year * 100 + proj2.creation.month) - (proj1.creation.year * 100 + proj1.creation.month));
         setState({ projects: contentCopy, projectsDict: projectsDict2, isBusy: false })
     }
 

@@ -27,12 +27,13 @@ const [positionOffset, setPosition] = useState(0);
     position: "relative",
     display: "inline-block",
     width: rendSize,
-    "margin-left": `${positionOffset}px`
+    "margin-left": `${positionOffset}px`,
+    "counter-increment" : "year -2",
   };
 
 
   const timeline__counter = {
-    "counterReset": "year " + (startYear - 1),
+    "counterReset": "year " + (endYear),
     "margin-left": `${positionOffset}px`
   }
 
@@ -71,19 +72,15 @@ const [positionOffset, setPosition] = useState(0);
 
 
     let offset = yearList[p.creation.month] / 2
-    let monthPosition = (offset + parseInt(p.creation.month)) / 13
 
+    //1 - pour inverser (gauche = decembre)
+    let monthLocalPosition = 1.0 - (offset + parseInt(p.creation.month)) / 13
+    // Conversion en CSS
+    let monthLocalPlacement = "calc(" + monthLocalPosition + " * " + rendSize + " - 15px)"
 
-    //console.log(p.creation)
-    /*
-    let monthPlacement = "calc(" + monthPosition + " * " + rendSize + " - 15px)"
-    let yearPlacement = ((parseInt(p.creation.year) - startYear) * 100 / yearCount) + "%"
-    let total = "calc(" + monthPlacement + " + " + yearPlacement + ")"
-*/
-
-let monthPlacement = "calc(" + monthPosition + " * " + rendSize + " - 15px)"
-let yearPlacement = ((parseInt(p.creation.year) - startYear) * 100 / yearCount) + "%"
-let total = "calc(" + monthPlacement + " + " + yearPlacement + ")"
+    //Placement au niveau de l'année
+    let yearPlacementPercent = ((endYear - parseInt(p.creation.year)-2)/ yearCount) * 100 + "%"
+    let total = "calc(" + monthLocalPlacement + " + " + yearPlacementPercent + ")"
 
 
 
@@ -100,8 +97,8 @@ let total = "calc(" + monthPlacement + " + " + yearPlacement + ")"
           // left:((endYear - p.creation.year)*100/yearCount)+"%"
           left: total,
           filter: 
-          "brightness(" + (1 +  (Math.cos(monthPosition*20000) * 0.5))+
-           ") hue-rotate(" + Math.cos(monthPosition*999999) *20 +   "deg) " +
+          "brightness(" + (1 +  (Math.cos(monthLocalPosition*20000) * 0.5))+
+           ") hue-rotate(" + Math.cos(monthLocalPosition*999999) *20 +   "deg) " +
           "drop-shadow(-2px 0px 0px    rgba(0, 0, 0, 1)) "+
           "drop-shadow(2px 0px 0px    rgba(0, 0, 0, 1)) ",
           

@@ -83,6 +83,7 @@ function FrontPage(props) {
   let prevId = 0
 
 
+  ///Obtenir la liste des projets, avec des filtres et modifications appliqués
   function GetModifiedProjectArray(projects){
 let res = []
 
@@ -97,6 +98,7 @@ let res = []
 
           res.push(proj)
     })
+
     return res
 }
   
