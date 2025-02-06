@@ -36,18 +36,17 @@ function FrontPage(props) {
 
 //Charger les filters depuis la session storage 
     const loadFilter = JSON.parse(sessionStorage.getItem("filters"))
-    console.log("LOAD:")
-    console.log(loadFilter)
+   // console.log("LOAD:")
+   // console.log(loadFilter)
     if (loadFilter != null) {
       for (let i = 0; i < newFilters.length; i++)         
         newFilters[i] = loadFilter[i];
-      
     }
 
     const projDatas = (sessionStorage.getItem("renderedProjects"));
     if(projDatas != null){
         renderedProjects = (JSON.parse(projDatas));
-        console.log(projDatas)
+       // console.log(projDatas)
     }
       
       UpdateVariables(newFilters)//Saving des cookies pour la premiere fois
@@ -104,8 +103,6 @@ let res = []
   
 
 
- 
-
 
 
   return (
@@ -160,7 +157,8 @@ let res = []
 
       <h2>Timeline</h2>
 
-      <GetTimeline renderedProjects={renderedProjects}></GetTimeline>
+            
+            <GetTimeline renderedProjects={renderedProjects} key={"timelineKey0"}></GetTimeline>
 
 
       <h2>Unity Projects</h2>

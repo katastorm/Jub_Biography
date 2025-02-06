@@ -2,14 +2,18 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/HeaderNavStyle.scss';
-import { Link, Route } from "wouter";
-import { useLocation } from "wouter";
-
-
+import { useNavigate } from "react-router-dom";
 
 
 const DrawHeaderNav = () => {
-    const [location, setLocation] = useLocation();
+
+    const navigate = useNavigate();
+
+    function handleClick(path) {
+        navigate(path);
+      }
+    
+
 
     return (
 
@@ -24,12 +28,10 @@ const DrawHeaderNav = () => {
 
   </div>
   <ul className="nav-links">
-      <li><a onClick={() => setLocation("profile", true)}>Profil</a></li>
-      <li><a onClick={() => setLocation("home", true)}>Projets Unity</a></li>
+      <li><a onClick={() => handleClick("/Jub_Biography/profile")}>Profil</a></li>
+      <li><a onClick={() => handleClick("/Jub_Biography/home")}>Projets Unity</a></li>
 
-
-   {/*  <li><a href="#">Solutions</a></li>
-      <li><a href="#">Products</a></li>*/}
+  
 </ul>
 
 
@@ -50,7 +52,7 @@ const DrawFooterNav = () => {
 
 <footer className="Body-Position">
 
-<p> Thanks credit </p>   
+<p>2025</p>   
 
 
 </footer>

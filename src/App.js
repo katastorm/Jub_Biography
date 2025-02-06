@@ -1,6 +1,5 @@
 
 
-import { Link, Route, Switch } from "wouter";
 import FrontPage from "./FrontPageUnity";
 import ProjectPage from "./ProjectPage";
 import ProfilePage from "./ProfilePage";
@@ -8,13 +7,17 @@ import PageNotFound from "./404";
 import { DrawHeaderNav, DrawFooterNav } from './NavHeader.js';
 import { useState, useEffect } from 'react';
 import folders from "./projectList.json"
-import { useLocationProperty, navigate } from "wouter/use-location";
-import { Router, Redirect } from "wouter";
 import { prettyFormat } from "@testing-library/react";
 import ParralaxBackground from './jquerry/ParralaxBackground.js';
+import { BrowserRouter, Routes, Route, Navigate, useParams, useNavigate } from "react-router-dom";
 
 
 
+
+
+
+
+////Gere la liste des projets
 const App = () => {
 
 
@@ -24,16 +27,17 @@ const App = () => {
         isBusy: true
     })
 
+    const currentDate = new Date()
 
     //Supression des erreurs liés aux tags customs utilisés dans les .md du projet
     const realError = console.error;
     console.error = (...x) => {
-      // on escape les tags customs;
-      //console.log(JSON.stringify(x))
-      if (x[0].length > 0 && x[0].includes("is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.")) {
-        return;
-      }
-      realError(...x);
+        // on escape les tags customs;
+        //console.log(JSON.stringify(x))
+        if (x[0].length > 0 && x[0].includes("is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.")) {
+            return;
+        }
+        realError(...x);
     };
 
 
@@ -66,6 +70,9 @@ const App = () => {
     };
 
 
+
+    ///Gestion de la liste des projets
+
     const refreshContents = async () => {
         let contentCopy = [];
         let projectsDict2 = {};
@@ -77,6 +84,8 @@ const App = () => {
             let pat = "/Jub_Biography/Projects/" + folder.folderName;
             let content = folder
 
+
+
             try {
 
                 //image d epreview & index des pages
@@ -87,10 +96,16 @@ const App = () => {
                 else
                     content.preview = "/Jub_Biography/preview_unkown.jpg"
 
-                content.folderName = encodeURIComponent(folder.folderName);
+                //content.folderName = encodeURIComponent(folder.folderName);
                 content.folderPath = pat;
                 content.mainMarkdownPath = content.hasMdFile ? content.folderPath + '/page.md' : "/Jub_Biography/ProjectWIP.md";
 
+                if (content.ending == undefined) {
+                    content.ending = {
+                        "year": (currentDate.getFullYear()),
+                        "month": (currentDate.getMonth()),
+                    }
+                }
 
 
                 projectsDict2[content.folderName] = content
@@ -101,7 +116,7 @@ const App = () => {
             }
         }
         //Tri dans le sens décroissant
-        contentCopy.sort((proj1, proj2) => (proj2.creation.year * 100 + proj2.creation.month) - (proj1.creation.year * 100 + proj1.creation.month));
+        contentCopy.sort((proj1, proj2) => (proj2.ending.year * 100 + proj2.ending.month) - (proj1.ending.year * 100 + proj1.ending.month));
         setState({ projects: contentCopy, projectsDict: projectsDict2, isBusy: false })
     }
 
@@ -113,117 +128,151 @@ const App = () => {
 
 
 
-    const hashLocation = () => window.location.hash.replace(/^#/, "") || "/";
-
-    const hashNavigate = (to) => navigate("#" + to);
-
-    const useHashLocation = () => {
-        let location = useLocationProperty(hashLocation);
-        // console.log(location);
-        return [location, hashNavigate];
-    };
 
 
 
 
 
 
+    const site_basename = "/Jub_Biography"
+
+    function RepairHashtagLink() {
+
+        console.log("broken link")
+        //console.log(useParams())
+
+
+        return <h1>Broken shit</h1>
+
+        //  return (<Navigate to="/Jub_Biography/home" replace />)
+
+    }
+
+
+    function LoadProject() {
+
+        let allPaths = useParams()["*"];
+
+        //Suprime le dernier '/'
+        if (allPaths.length > 0 && allPaths[allPaths.length - 1] == "/")
+            allPaths = allPaths.substring(0, allPaths.length - 1)
+
+        //Link repair
+
+        if (!allPaths.includes("/"))
+            allPaths = "Unity/" + allPaths
+        console.log(allPaths)
+
+        return (
+            <ProjectPage project={state.projectsDict[allPaths]} />
+        );
+    }
+
+    function ShowHome() {
+        return <FrontPage projects={state.projects} />
+    }
 
 
 
-    ///En cas de refresh de la page, on attends que les Projets soient correctements chargés avant de mettre en place la navigation
-    function loadingRoutes() {
+    function PreventHashtag() {
+        let path = window.location.href
+        // console.log(path)
 
-        if (!state.isBusy) {
+        /*
+          Jub_Biography/#projects/#Room505 => Jub_Biography/projects/Unity/Room505
+        */
 
-            return (<div>
-                <Route path="projects/#:currentFolderName">
-                    {(params) => <ProjectPage project={state.projectsDict[params.currentFolderName]} />}
-                </Route>
-
-                <Route path="404" component={PageNotFound} />
-                <Route>
-                    <Redirect to={"404"} />
-                </Route>
-            </div>
-
-            )
+        if (path.includes("#")) {
+            path = path.replace(origin, "").replaceAll("#", "")
+            // console.log(path)
+            return <Navigate to={path} replace />
         }
-        return <h1>Loading..</h1>
-
+        return <></>
     }
 
 
 
     return (
 
-        <Router base="/Jub_Biography" hook={useHashLocation}>
-
-            <div className="App">
-                <header className="App-header">
-                    <DrawHeaderNav />
+        <div>
+            <BrowserRouter >
 
 
-                    <ParralaxBackground />
-                    <div class="background">
-                        {/*
+                <div className="App">
+                    <header className="App-header">
+                        <DrawHeaderNav />
+
+
+                        <ParralaxBackground />
+                        <div className="background">
+                            {/*
   <img src="Jub_Biography/images/lol_loop1.gif" alt="Lack of light - ingame screenshot"/>
   <img src="Jub_Biography/images/lol_loop2.gif" alt="Lack of light - ingame screenshot"/>
   <img src="Jub_Biography/images/lol_loop2.gif" alt="Lack of light - ingame screenshot"/>
 */}
 
-                        <img src="/Jub_Biography/images/backgroundTest2.jpg" alt="backgroundImg" />
-                        <img src="/Jub_Biography/images/backgroundTest2.jpg" alt="backgroundImg" />
-                        <img src="/Jub_Biography/images/backgroundTest2.jpg" alt="backgroundImg" />
+                            <img src="/Jub_Biography/images/backgroundTest2.jpg" alt="backgroundImg" />
+                            <img src="/Jub_Biography/images/backgroundTest2.jpg" alt="backgroundImg" />
+                            <img src="/Jub_Biography/images/backgroundTest2.jpg" alt="backgroundImg" />
 
 
-                    </div>
-
-
-
-
-                    <div className="Body Body-Position">
+                        </div>
 
 
 
 
+                        <div className="Body Body-Position">
 
 
 
+                            <Routes>
 
-                        <Switch>
-                        
-                        <Route path="profile">
-                                {(params) => <ProfilePage/>}
-                         </Route>
-                            
 
-                            <Route path="home">
-                                {(params) => <FrontPage projects={state.projects} />}
-                            </Route>
-                            {
-                                <Route exact path="/">
-                                    {(params) => <FrontPage projects={state.projects} />}
+
+                                <Route exact path="/Jub_Biography">
+
+                                    <Route path={"home"} element={<ShowHome/>} />
+
+                                    <Route path={"profile"} element={<ProfilePage />} />
+
+                                    <Route path={"projects"}>
+                                        <Route path={"*"} element={<LoadProject />} />
+                                        <Route path={""} element={<Navigate to="/Jub_Biography/home" replace />} />
+                                    </Route>
+
+                                    <Route path={"*"} element={<Navigate to="/Jub_Biography/home" replace />} />
+                                    <Route path={""} element={<ShowHome/>} />
+
+
                                 </Route>
-                            }
 
-
-                            {
-                                loadingRoutes()
-                            }
-
-
-
-                        </Switch>
+                                <Route path="/*" element={<Navigate to="/Jub_Biography/home" replace />} /> {/* navigate to default route if no url matched */}
 
 
 
 
-                    </div>
-                    <DrawFooterNav></DrawFooterNav>
-                </header>
-            </div>
-        </Router>
+
+                            </Routes>
+
+                            {/*Super important, permet de rectifier l'url de la page de l'ancien path avec des "#" vers des "/" */}
+                            <PreventHashtag />
+
+
+
+
+
+
+                        </div>
+
+                        <DrawFooterNav></DrawFooterNav>
+                    </header>
+                </div>
+            </BrowserRouter>
+
+
+
+
+        </div>
     )
 };
 

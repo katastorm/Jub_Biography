@@ -50,8 +50,10 @@ A hover sample effect is added as well as an active state*/
 */
 .base-timeline__item {
   position: relative;
-      display: inline-block;
-      width: calc(100% / 8 - 5px); /* change width */
+  display: inline-block;
+  line-height: 5vh;
+  vertical-align: top;
+
 }
 
 .base-timeline__item::before {
@@ -64,6 +66,8 @@ A hover sample effect is added as well as an active state*/
         margin-left: 5px;
         display: inline-block;
 
+        vertical-align: top;
+   
 
         counter-increment: year;
         content: counter(year);
@@ -71,12 +75,14 @@ A hover sample effect is added as well as an active state*/
 
         background-color: steelblue;
         color: white;
-        font-weight: bold;
-        font-size: medium;
+        font-weight: bold;       
+        font-size: 1em;
         transition: all 0.6s ease-in-out;
         box-sizing: border-box;
         
 }
+
+
 
 .base-timeline__item::after {
 
@@ -88,6 +94,7 @@ A hover sample effect is added as well as an active state*/
   top: -0px;
   left: 0px;
 
+
   content: " ";
 
 
@@ -97,22 +104,9 @@ A hover sample effect is added as well as an active state*/
   box-sizing: border-box;
 }
 
-/* modifier with use of the data-year attribute */
 
 
-/* hover element */
-.base-timeline__item:hover::before {
-     //background-color: rgba( 225, 114, 114, .9);
-   //  transform: scale(2);
-      
-}
-/*
-.base-timeline__item--active::before {
-      background-color: rgba( 225, 114, 114, .9);
-      border: 2px solid;
-      border-color: rgba( 0, 0, 0, .3);
-           
-}*/
+
 
 .base-timeline__item:last-child {
       width: 0;
@@ -133,8 +127,8 @@ width: 25px;
 bottom: 5px;
 transition:all .1s linear;
 user-select: none;
-
 }
+
 
 .timelinePoint:hover{
 scale: 1.5;
@@ -150,4 +144,38 @@ drop-shadow(-1px 1px 0px white)
 
 //z-index: 10;
 }
+
+
+.timelinePoint_bar{
+  position: absolute;
+  width: 100px;  
+  background : #000 !important;
+  height: 50px;
+  max-height: 0px;
+
+  transition: max-height 0.25s ease-out, background-color 0.25s ease-out;
+}
+
+
+.timelinePoint:hover + .timelinePoint_bar{
+
+/*
+  border-left: solid darkblue;
+  border-right: solid darkblue;
+  border-bottom: solid steelblue;
+*/
+  border-width: 2px;
+
+
+  max-height: 4vh;
+  background: rgb(95, 158, 209) !important;
+  transition: max-height 0.25s ease-out, background-color 0.25s ease-out;
+}
+
+/*
+.timelinePoint_bar:hover{
+  max-height: "20px";
+  transition: max-height 0.15s ease-out;
+}*/
+
 

@@ -1,7 +1,7 @@
 
 
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import ReactDom from 'react-dom'
@@ -12,6 +12,7 @@ import ReactDOMServer from 'react-dom/server'
 import { useState, useEffect } from 'react';
 import { GetMonthName } from "./ProjectFuncs"
 import rehypeRaw from "rehype-raw";
+import { Link } from "react-router-dom";
 
 
 const draw404Project = () => {
@@ -58,8 +59,8 @@ const ProjectPage = (props) => {
     }
     
 
-    console.log("Refresh project MD, sending :")
-    console.log(m)
+   // console.log("Refresh project MD, sending :")
+   // console.log(m)
 
     //Application
     setState(m)
@@ -71,7 +72,7 @@ const ProjectPage = (props) => {
     m.historyDisplay = historyEnabled
     m.projectNameLocker = ""//Pour faire un force reload du markdown
 
-    console.log("Refresh history display = " + historyEnabled)    
+   // console.log("Refresh history display = " + historyEnabled)    
     setState(m)
  
 
@@ -83,7 +84,7 @@ const ProjectPage = (props) => {
     const m = { ...stateGenerated }
 
     if (!m.projectTitleIsImage) {
-      console.log("Refresh image title")
+    //  console.log("Refresh image title")
       m.projectTitle = title
       m.projectTitleIsImage = true
       setState(m)
@@ -206,9 +207,9 @@ const ProjectPage = (props) => {
 
       nextPreviousProjects = "\n\n"
       if (index > 0)
-        nextPreviousProjects += `> Projet précédent -  [${projects[index - 1].name}](/Jub_Biography/#projects/#${projects[index - 1].folderName})\n\n`
+        nextPreviousProjects += `> Projet précédent -  [${projects[index - 1].name}](/Jub_Biography/projects/${projects[index - 1].folderName})\n\n`
       if (index < projects.length - 1)
-        nextPreviousProjects += `> Projet suivant -  [${projects[index + 1].name}](/Jub_Biography/#projects/#${projects[index + 1].folderName})\n\n`
+        nextPreviousProjects += `> Projet suivant -  [${projects[index + 1].name}](/Jub_Biography/projects/${projects[index + 1].folderName})\n\n`
 
       // console.log("Generating previous & next projects " + index)
       //On applique les modifications du texte
@@ -312,21 +313,29 @@ const ProjectPage = (props) => {
           transformImageUri={uri =>
             uri.startsWith("http") ? uri : `${project.folderPath + "/"}${uri}`
           }
+          
           components={{
             // @ts-ignore
             history: () => {
               return (
-                <history><button class="funky_text_button" onClick={() => setHistoryState(!state.historyDisplay)}>{!state.historyDisplay && "Voir plus d'infos" || "Voir moins d'infos"}</button></history>
+                <history><button className="funky_text_button" onClick={() => setHistoryState(!state.historyDisplay)}>{!state.historyDisplay && "Voir plus d'infos" || "Voir moins d'infos"}</button></history>
               );
             },
             imagegroup: (m) => {
-
-
               return (
                 <div className="imagegroup"></div>
               );
 
             },
+            //Changement de la navigation a travers les pages
+            a: (props) => {
+              console.log(props)
+             return <Link to={props.href}>{props.children}</Link>
+            },
+
+
+
+
           }}
 
 

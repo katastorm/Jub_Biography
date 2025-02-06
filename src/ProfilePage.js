@@ -44,7 +44,7 @@ function ProfilePage(props) {
 
 
   const boxShiftStyle = {
-    "margin-left": `50px`,
+    marginLeft : `50px`,
     "margin-bottom": `50px`
   }
 
@@ -52,7 +52,7 @@ function ProfilePage(props) {
     "opacity": `0.5`,
   }
   const ulShift = {
-    "margin-left": `30px`,
+    marginLeft : `30px`,
     
   }
 
