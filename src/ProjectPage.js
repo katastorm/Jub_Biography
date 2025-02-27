@@ -207,9 +207,9 @@ const ProjectPage = (props) => {
 
       nextPreviousProjects = "\n\n"
       if (index > 0)
-        nextPreviousProjects += `> Projet précédent -  [${projects[index - 1].name}](/Jub_Biography/projects/${projects[index - 1].folderName})\n\n`
+        nextPreviousProjects += `> Projet suivant -  [${projects[index - 1].name}](/Jub_Biography/projects/${projects[index - 1].folderName})\n\n`
       if (index < projects.length - 1)
-        nextPreviousProjects += `> Projet suivant -  [${projects[index + 1].name}](/Jub_Biography/projects/${projects[index + 1].folderName})\n\n`
+        nextPreviousProjects += `> Projet précédent - [${projects[index + 1].name}](/Jub_Biography/projects/${projects[index + 1].folderName})\n\n`
 
       // console.log("Generating previous & next projects " + index)
       //On applique les modifications du texte

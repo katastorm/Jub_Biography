@@ -137,7 +137,7 @@ return (
         <tr>
           <td>BAC S</td>
           <td>Sciences de l'ingénieur option Physique-chimie</td>
-          <td>2018-2020</td>
+          <td>2018</td>
           <td>Lycée coubertin</td>
           <td>Meaux</td>
         </tr>

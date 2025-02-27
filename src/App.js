@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import folders from "./projectList.json"
 import { prettyFormat } from "@testing-library/react";
 import ParralaxBackground from './jquerry/ParralaxBackground.js';
-import { BrowserRouter, Routes, Route, Navigate, useParams, useNavigate } from "react-router-dom";
+import { HashRouter, BrowserRouter, Routes, Route, Navigate, useParams, useNavigate } from "react-router-dom";
 
 
 
