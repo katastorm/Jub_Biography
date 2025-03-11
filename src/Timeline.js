@@ -1,6 +1,6 @@
 
 import './styles/Timeline.scss';
-import React, { useState } from 'react'
+//import React, { useState } from 'react'
 
 import { ProjectPopup } from "./ProjectFuncs.js";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
@@ -14,7 +14,8 @@ const GetTimeline = (props) => {
 
   
   //const [location, setLocation] = useLocation();
-  const [positionOffset, setPosition] = useState(0);
+  //const [positionOffset, setPosition] = useState(0);
+const positionOffset = 0;
 
   const startYear = 2014;
   //const endYear = 2024;
@@ -84,7 +85,7 @@ const GetTimeline = (props) => {
 */
 
 let pixelSizeOfAYear = `calc(100% / ${yearCount})`
-let pixelSizeOfAMonth = `calc(100% / ${yearCount * 12})`
+//let pixelSizeOfAMonth = `calc(100% / ${yearCount * 12})`
 
 
     //On construit la liste des pins sur la timeline
@@ -95,18 +96,18 @@ let pixelSizeOfAMonth = `calc(100% / ${yearCount * 12})`
 
     let p = projectList[i]
 
-    if (p.ending.year == undefined || p.ending.month == undefined) continue
+    if (p.ending.year === undefined || p.ending.month === undefined) continue
 
     let yearList = yearMonthPlacement[p.ending.year]
 
     let projectCssDuration = Math.max(1/12, (p.ending.year + p.ending.month/12 ) - (p.creation.year +  p.creation.month / 12))
 
-    if (yearList == undefined) {
+    if (yearList === undefined) {
       yearMonthPlacement[p.ending.year] = {}
       yearList = yearMonthPlacement[p.ending.year]
     }
 
-    if (yearList[p.ending.month] == undefined) {
+    if (yearList[p.ending.month] === undefined) {
       yearList[p.ending.month] = 0
     } else
       yearList[p.ending.month]++
@@ -128,11 +129,11 @@ let pixelSizeOfAMonth = `calc(100% / ${yearCount * 12})`
 
     pointerDraw.push(
 
-<div>
-      <OverlayTrigger trigger={["hover", "focus"]} key={"timePointTrigger" + i} placement="bottom" overlay={ProjectPopup(p, p.hasPreview)} offset={[0,45]}>
+<div key={"timePointTrigger" + i}>
+      <OverlayTrigger trigger={["hover", "focus"]} placement="bottom" overlay={ProjectPopup(p, p.hasPreview)} offset={[0,45]}>
 
         {/*Pin de la timeline*/}
-        <img src={require("./frontPage/timelinePin.gif")} className="timelinePoint"
+        <img src={require("./frontPage/timelinePin.gif")} alt='timline pin' className="timelinePoint"
           style={{
             // left:((endYear - p.creation.year)*100/yearCount)+"%"
             left: totalCssPosition,
@@ -185,10 +186,10 @@ style = {{
   return (
     //<button onClick={() => setPosition(positionOffset+20) }>Next</button>
 
-    <div>
+    <>
 
 
-      <ul className="base-timeline" style={timeline__counter}>
+      <ul key="timelineObj" className="base-timeline" style={timeline__counter}>
 
         {pointerDraw}
 
@@ -197,7 +198,7 @@ style = {{
 
       </ul>
 
-    </div>
+    </>
 
   );
 }

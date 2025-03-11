@@ -1,15 +1,12 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>décembre 2020</td>
-        <td>décembre 2020</td>
-        <td>small</td><td>epic</td>
-        <td>Jeu complet</td><td>YES</td>
-        </tr></tbody></table></autotab>
+<title></title>
+
+![](./medias/img4.jpg)
 
 ## Description
 
 Underwar est un jeu type pierre-feuille-ciseaux, disponible sur [itch.io](https://logiked.itch.io/underwar). Développé en collaboration avec [Maxime BARON](https://www.linkedin.com/in/maxime-baron-3306881a3/) en tant que graphiste.
 
-![](./medias/img4.jpg)
+<autotab></autotab>
 
 ## Contexte
 
@@ -28,10 +25,4 @@ Underwar peut se jouer sur le même ordinateur en utilisant des parties du clavi
 La sensation d'accomplissement a été géniale, pour un développement relativement court ! Underwar est un de nos seuls jeux en ligne qui fonctionne parfaitement pour une démo. On a un petit soucis de conexion pour le mode multijoueur, parfois. Mais quand ca marche, c'est bien optimisé. Les joueurs sont captivés pendant leur découverte de ce jeu simpliste, et il n'est pas rare de voir s'organiser des tournois ou des défis entre les partipants quand on présente le projet à un groupe.
 
 
-<nextprojects>
-
-> Projet précédent -  [Projet Muinecraft](/Jub_Biography/projects/Unity/Muinecraft)
-
-> Projet suivant -  [Robot industry V2](/Jub_Biography/projects/Unity/Robotindustry)
-
-</nextprojects>
+<nextprojects></nextprojects>

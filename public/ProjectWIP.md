@@ -1,7 +1,9 @@
-<autotab></autotab>
 
-![Work in progress](../../wip.png)
+
+![Work in progress](../../../../wip.png)
 
 **La page arrive bientôt ! Patience...**
+
+<autotab></autotab>
 
 <nextprojects></nextprojects>

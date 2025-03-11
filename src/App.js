@@ -88,24 +88,34 @@ const App = () => {
 
             try {
 
+                //Si c'est la première init, executé 1 fois
+                if (content.preview == undefined) {
+
+                    content.inDeveloppement = false;
+
+                    if (content.ending == undefined) {
+                        content.ending = {
+                            "year": (currentDate.getFullYear()),
+                            "month": (currentDate.getMonth()),
+                        }
+                        content.inDeveloppement = true;
+                    }
+
+                }
+
+
                 //image d epreview & index des pages
                 // content.preview = await fetchImage(pat + "/preview.jpg", defaultImgUrl)
 
                 if (content.hasPreview)
-                    content.preview = pat + "/preview.jpg"
+                    content.preview = pat + "preview.jpg"
                 else
                     content.preview = "/Jub_Biography/preview_unkown.jpg"
 
                 //content.folderName = encodeURIComponent(folder.folderName);
                 content.folderPath = pat;
-                content.mainMarkdownPath = content.hasMdFile ? content.folderPath + '/page.md' : "/Jub_Biography/ProjectWIP.md";
+                content.mainMarkdownPath = content.hasMdFile ? content.folderPath + 'page.md' : "/Jub_Biography/ProjectWIP.md";
 
-                if (content.ending == undefined) {
-                    content.ending = {
-                        "year": (currentDate.getFullYear()),
-                        "month": (currentDate.getMonth()),
-                    }
-                }
 
 
                 projectsDict2[content.folderName] = content
@@ -134,38 +144,23 @@ const App = () => {
 
 
 
-    const site_basename = "/Jub_Biography"
-
-    function RepairHashtagLink() {
-
-        console.log("broken link")
-        //console.log(useParams())
-
-
-        return <h1>Broken shit</h1>
-
-        //  return (<Navigate to="/Jub_Biography/home" replace />)
-
-    }
-
 
     function LoadProject() {
 
-        let allPaths = useParams()["*"];
+        const allPaths = useParams()["*"];
 
-        //Suprime le dernier '/'
-        if (allPaths.length > 0 && allPaths[allPaths.length - 1] == "/")
-            allPaths = allPaths.substring(0, allPaths.length - 1)
+        let modified = allPaths
 
-        //Link repair
+        if (modified.length > 0 && modified[modified.length - 1] !== "/")
+            modified += "/";
 
-        if (!allPaths.includes("/"))
-            allPaths = "Unity/" + allPaths
-        console.log(allPaths)
 
-        return (
-            <ProjectPage project={state.projectsDict[allPaths]} />
-        );
+        if (allPaths != modified)
+            return <Navigate to={"/Jub_Biography/projects/" + modified} replace/>
+        else
+            return (
+                <ProjectPage project={state.projectsDict[modified]} />
+            );
     }
 
     function ShowHome() {
@@ -231,7 +226,7 @@ const App = () => {
 
                                 <Route exact path="/Jub_Biography">
 
-                                    <Route path={"home"} element={<ShowHome/>} />
+                                    <Route path={"home"} element={<ShowHome />} />
 
                                     <Route path={"profile"} element={<ProfilePage />} />
 
@@ -241,7 +236,7 @@ const App = () => {
                                     </Route>
 
                                     <Route path={"*"} element={<Navigate to="/Jub_Biography/home" replace />} />
-                                    <Route path={""} element={<ShowHome/>} />
+                                    <Route path={""} element={<ShowHome />} />
 
 
                                 </Route>

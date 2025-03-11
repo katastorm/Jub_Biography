@@ -1,9 +1,5 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>mai 2021</td>
-        <td>juillet 2021</td>
-        <td>medium</td><td>cool</td>
-        <td>Jeu alpha / incomplet</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<autotab></autotab>
 
 ## Description
 
@@ -90,11 +86,4 @@ Le projet rendu a été extrêmement bien noté car le résultat était, malgré
 </history>
 
 
-<nextprojects>
-
-> Projet précédent -  [Underwar](/Jub_Biography/projects/Unity/Underwar)
-
-> Projet suivant -  [Projet VR ESIEE 
-Room 505](/Jub_Biography/projects/Unity/Room505)
-
-</nextprojects>
+<nextprojects></nextprojects>

@@ -1,18 +1,14 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>février 2016</td>
-        <td>mars 2016</td>
-        <td>small</td><td>null</td>
-        <td>Prototype court</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<autotab></autotab>
 
 ## Description
 
-RPG en 3D, avec certains éléments de l'histoire similaires au [RPG 2D](/Jub_Biography/projects/RPG2D).
+RPG en 3D, avec certains éléments de l'histoire similaires au [RPG 2D](/Jub_Biography/projects/Unity/RPG2D).
 ![](./medias/img1.jpg)
 
 ## Contexte
 
-Aprés avoir réalise le prototype [RPG 2D](/Jub_Biography/projects/RPG2D), je me suis questionné sur la simplicité du développement d'un jeu similaire en 3D. Ca ne devait pas être si compliqué. 
+Aprés avoir réalise le prototype [RPG 2D](/Jub_Biography/projects/Unity/RPG2D), je me suis questionné sur la simplicité du développement d'un jeu similaire en 3D. Ca ne devait pas être si compliqué. 
 
 ## Developpement
 
@@ -24,10 +20,4 @@ Ce projet m'a permis de m'initier à Blender en modifiant des modèles 3D préex
 Après avoir commencer à coder le système de combat, je me suis lassé du projet, surtout quand l'idée bien plus intéressante de mon prochain projet m'est parvenue....
 
 
-<nextprojects>
-
-> Projet précédent -  [Kata's minigames](/Jub_Biography/projects/Unity/MrKataMinigames)
-
-> Projet suivant -  [Super Gun Fight](/Jub_Biography/projects/Unity/SuperGunFight)
-
-</nextprojects>
+<nextprojects></nextprojects>

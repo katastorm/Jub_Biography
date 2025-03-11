@@ -1,9 +1,5 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>mars 2016</td>
-        <td>mai 2016</td>
-        <td>medium</td><td>cool</td>
-        <td>Jeu alpha / incomplet</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<autotab></autotab>
 
 ## Description
 
@@ -39,10 +35,4 @@ Je reste plutôt déçu du résultat, puisque j'ai passé le plus clair de mon t
 
 Ainsi bien que je sois resté sur ma faim à l'encontre de mes objectifs initiaux. J'ai vraiment apprécié les nouveau éléments gameplay et le jeu en lui même qui est encore très jouable et amusant à ce jour !
 
-<nextprojects>
-
-> Projet précédent -  [RPG 3D](/Jub_Biography/projects/Unity/RPG3D)
-
-> Projet suivant -  [Demo nuclear](/Jub_Biography/projects/Unity/DemoNuclear)
-
-</nextprojects>
+<nextprojects></nextprojects>

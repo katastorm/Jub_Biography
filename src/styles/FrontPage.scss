@@ -29,8 +29,8 @@
 
 
 .Body-Position {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 5%;
+  padding-right: 5%;
   width: 80%;
 }
 
@@ -70,8 +70,8 @@ body {
   align-items: center;
   justify-content: center;
 
-  padding-left: 2%;
-  padding-right: 2%;
+ // padding-left: 2%;
+ // padding-right: 2%;
 }
 
 
@@ -325,7 +325,7 @@ h1 {
 }
 
 h2 {
-  margin-top: 5vh;
+  margin-top: 2vh;
   margin-bottom: 1vh;
   font-size: 1.1em;
   //font-weight: bold;
@@ -339,33 +339,37 @@ h3 {
 
 }
 
-
-
-
-
+//Pour les zones entourés de **
+em {
+  color: #8596e0;
+}
 
 
 p,
+span,
 li,
 form {
   font-size: large;
   text-justify: inter-word;
+  text-align: justify;
 }
 
-//Les listes à choix qui sont aprés les P, leur espacement est nul! on les monte un petit peu
-.ReactMarkdown ul{
-  transform: translate(0px, -01rem)
-}
+
 
 .ReactMarkdown li{  
   margin-left: 20px !important;
 }
 
-
-//Pour les zones entourés de **
-em {
-color: #8596e0;
+.ReactMarkdown span, .ReactMarkdown .code{  
+line-height: 1.6em;
+display: block;
+margin-top: 8px;
+margin-bottom: 12px;
 }
+
+
+
+
 
 
 #TitleImage{
@@ -382,15 +386,18 @@ color: #8596e0;
 }
 
 
-.ReactMarkdown img,
+.ReactMarkdown img:not(#TitleImage), 
 .ReactMarkdown video,
 .ReactMarkdown iframe {
   margin: auto;
-  margin-bottom: 2.5vh;
-  margin-top: 2.5vh;
+  margin-bottom: 4vh;
+  margin-top: 4vh;
   display: block;
   max-height: 60vh;
   max-width: 100%;
+
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px 2px rgba($color: #000, $alpha: .5);
 }
 
 
@@ -400,11 +407,15 @@ color: #8596e0;
 .ReactMarkdown video+em,
 
 .ReactMarkdown *:has(> .imagegroup)+em,//Tous les EM qui suivent les imageGroup
-.ReactMarkdown *:has(> .imagegroup)+p>em{
-display: block;
+.ReactMarkdown *:has(> .imagegroup)+span>em{
+display: block !important;
+
   text-align: center;
   color: #fff;
   opacity: 0.6;
+  transform: translateY(-3vh);
+  height: 10px;
+
 }
 
 
@@ -420,7 +431,7 @@ display: block;
 
 .ReactMarkdown *:has(> .imagegroup) img {  //Tous les images à coté des imageGroup
   display: flex;
-  max-width: 50%;
+  max-width: 50% !important;
   max-height: 40vh;
   width: auto;
 }

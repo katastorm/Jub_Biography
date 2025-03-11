@@ -1,9 +1,5 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>octobre 2019</td>
-        <td>octobre 2019</td>
-        <td>small</td><td>cool</td>
-        <td>Prototype jouable</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<autotab></autotab>
 
 ## Description
 
@@ -38,10 +34,4 @@ Le système fonctionnait plutot bien, mais je me suis vite lassé. Mon attention
 
 
 
-<nextprojects>
-
-> Projet précédent -  [Mr. Kata Die It Yoursefl](/Jub_Biography/projects/Unity/MrKata_DieItYoursefl)
-
-> Projet suivant -  [Projet Muinecraft](/Jub_Biography/projects/Unity/Muinecraft)
-
-</nextprojects>
+<nextprojects></nextprojects>

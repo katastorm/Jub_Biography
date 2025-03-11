@@ -1,10 +1,6 @@
+<title></title>
 
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>mars 2013</td>
-        <td>mars 2013</td>
-        <td>ultra small</td><td>null</td>
-        <td>Prototype court</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<autotab></autotab>
 
 ## Description
 
@@ -16,8 +12,4 @@ C'est mon tout premier projet. Un test rapide des fonctionnalités du moteur. J'
 ![Screen du projet](./medias/img1.jpg)
 
 
-<nextprojects>
-
-> Projet suivant -  [Oreka](/Jub_Biography/projects/Unity/Oreka)
-
-</nextprojects>
+<nextprojects></nextprojects>

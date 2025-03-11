@@ -1,9 +1,5 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>octobre 2014</td>
-        <td>décembre 2014</td>
-        <td>small</td><td>null</td>
-        <td>Jeu alpha / incomplet</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<autotab></autotab>
 
 ## Description
 
@@ -20,10 +16,4 @@ Les essais de multijoueur étaient assez instables. Essayant de comprendre comme
 ![](./medias/multiplayer.jpg)
 *Test de multijoueur (la capsule est un second joueur)*
 
-<nextprojects>
-
-> Projet précédent -  [Oreka](/Jub_Biography/projects/Unity/Oreka)
-
-> Projet suivant -  [Goblinville FPS](/Jub_Biography/projects/Unity/Goblinville)
-
-</nextprojects>
+<nextprojects></nextprojects>

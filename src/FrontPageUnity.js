@@ -12,13 +12,13 @@ import { useState, useEffect } from 'react';
 function FrontPage(props) {
 
   const [filters, setfilters] = useState([false, false])
-  let renderedProjects = props.projects 
+  let renderedProjects = props.projects
 
   console.log("START")
 
 
 
-  
+
   //On creer la variable modifiable newFilters
   let newFilters = []
   filters.forEach(m => newFilters.push(m))
@@ -34,26 +34,26 @@ function FrontPage(props) {
 
 
 
-//Charger les filters depuis la session storage 
-    const loadFilter = JSON.parse(sessionStorage.getItem("filters"))
-   // console.log("LOAD:")
-   // console.log(loadFilter)
-    if (loadFilter != null) {
-      for (let i = 0; i < newFilters.length; i++)         
-        newFilters[i] = loadFilter[i];
-    }
+  //Charger les filters depuis la session storage 
+  const loadFilter = JSON.parse(sessionStorage.getItem("filters"))
+  // console.log("LOAD:")
+  // console.log(loadFilter)
+  if (loadFilter != null) {
+    for (let i = 0; i < newFilters.length; i++)
+      newFilters[i] = loadFilter[i];
+  }
 
-    const projDatas = (sessionStorage.getItem("renderedProjects"));
-    if(projDatas != null){
-        renderedProjects = (JSON.parse(projDatas));
-       // console.log(projDatas)
-    }
-      
-      UpdateVariables(newFilters)//Saving des cookies pour la premiere fois
+  const projDatas = (sessionStorage.getItem("renderedProjects"));
+  if (projDatas != null) {
+    renderedProjects = (JSON.parse(projDatas));
+    // console.log(projDatas)
+  }
+
+  UpdateVariables(newFilters)//Saving des cookies pour la premiere fois
 
 
 
-//Appelé quand les filtres sont changés via les toggles
+  //Appelé quand les filtres sont changés via les toggles
   function changeFilter(id, value) {
     console.log(value)
     console.log(id)
@@ -65,7 +65,7 @@ function FrontPage(props) {
     console.log("new filters : " + newFilters)
     //localStorage.setItem("filters", newFilters);
     sessionStorage.setItem("filters", JSON.stringify(newFilters));
-    UpdateVariables(newFilters)    
+    UpdateVariables(newFilters)
   }
 
   function UpdateVariables(filterArray) {
@@ -78,29 +78,29 @@ function FrontPage(props) {
   }
 
 
-  
+
   let prevId = 0
 
 
   ///Obtenir la liste des projets, avec des filtres et modifications appliqués
-  function GetModifiedProjectArray(projects){
-let res = []
+  function GetModifiedProjectArray(projects) {
+    let res = []
 
     projects.forEach(proj => {
 
-          if (filter_fullPages && (!proj.hasMdFile || !proj.hasPreview))
-            return
+      if (filter_fullPages && (!proj.hasMdFile || !proj.hasPreview))
+        return
 
-          if (filter_equip && (proj.membersCount <= 1))
-            return
+      if (filter_equip && (proj.membersCount <= 1))
+        return
 
 
-          res.push(proj)
+      res.push(proj)
     })
 
     return res
-}
-  
+  }
+
 
 
 
@@ -112,31 +112,46 @@ let res = []
 
       <h1>Projets Unity</h1>
 
-
-      <p>Filtres</p>
+ 
 
       <form className='Filters'>
 
 
-        <div>
-          <span>Pages complètes seulement </span>
-          <label className="switch" >
-            <input type="checkbox"
-              onChange={m => { }}
-              onClick={w => {
-                changeFilter(0, !filter_fullPages);
-              }
-              }
+        <table className='table_compact_horizontal_small'><tbody>
+        
+        <tr>
+        <td colSpan="2" className="table_cell_centered table_cell_title_decorator">
+            Filtres
+            </td>
+            </tr>
+          <tr>
+           
+            <td>
+              Pages complètes seulement
+            </td>
+            <td className="table_cell_centered">
+              <label className="switch" >
 
-              checked={filter_fullPages}
-            />
-            <span className="slider round"></span>
-          </label>
-        </div>
+                <input type="checkbox"
+                  onChange={m => { }}
+                  onClick={w => {
+                    changeFilter(0, !filter_fullPages);
+                  }
+                  }
 
+                  checked={filter_fullPages}
+                />
+                <span className="slider round"></span>
+              </label>
+            </td>
+          </tr>
 
-        <div>
-          <span>Projet en équipe </span>
+          <tr>
+          <td>
+          Projet en équipe
+          </td>
+
+          <td className="table_cell_centered">
           <label className="switch" >
             <input type="checkbox"
               onChange={m => { }}
@@ -149,7 +164,10 @@ let res = []
             />
             <span className="slider round"></span>
           </label>
-        </div>
+          </td>
+        </tr>
+        </tbody></table>
+
 
       </form>
 
@@ -157,8 +175,8 @@ let res = []
 
       <h2>Timeline</h2>
 
-            
-            <GetTimeline renderedProjects={renderedProjects} key={"timelineKey0"}></GetTimeline>
+
+      <GetTimeline renderedProjects={renderedProjects} key={"timelineKey0"}></GetTimeline>
 
 
       <h2>Unity Projects</h2>

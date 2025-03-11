@@ -4,16 +4,15 @@
 
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import ReactDom from 'react-dom'
+//import ReactDom from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/FrontPage.scss';
 import './styles/FunkyTextButton.scss';
-import ReactDOMServer from 'react-dom/server'
-import { useState, useEffect } from 'react';
-import { GetMonthName } from "./ProjectFuncs"
+//import ReactDOMServer from 'react-dom/server'
+import { useState } from 'react';
+import { GetProjectInfos_TableMode } from "./ProjectFuncs"
 import rehypeRaw from "rehype-raw";
-import { Link } from "react-router-dom";
-
+import { Route, Link, Routes, useLocation } from 'react-router-dom';
 
 const draw404Project = () => {
   return (
@@ -31,76 +30,74 @@ const errorWhenLoadingProject = () => {
 
 
 const initialState = {
-  projectTitle: undefined,//L'image Titre ou le texte du titre
-  projectNameLocker:"",
-  projectTitleIsImage: false,//Est ce que c'est une image ?
+  projectNameLocker: "",
   projectMd: "",//La page Md chargée
   historyDisplay: false,//afficher les infos supplémentaire des pages
+  //titleTag : (<h1>Project title</h1>)
 }
 
 const ProjectPage = (props) => {
 
+  const location = useLocation();
 
   //Setter pour les infos du projet
   const [state, setState] = useState(initialState)
+  //Modifier le titre en haut de page du projet. On passe le state en paramètre car à cause du fucking asynchrone ont sait jamais quand State(usestate) sera update
+  const [imageNotFound, setImageNotFound] = useState(false);
 
 
 
-  function setProjectMd(md, project) {
+
+
+  function setProjectMd(md, project/*, titleTag=null*/) {
     //Dupplication de l'ancien state
     const m = { ...state }
     m.projectMd = md
 
-    if (project != undefined) {
-      m.projectTitle = <h1>{project.name}</h1>
-      m.projectTitleIsImage = false
-      m.projectNameLocker = project.folderName
-      
-    }
-    
+    //if(titleTag !== null)
+    //  m.titleTag = titleTag
 
-   // console.log("Refresh project MD, sending :")
-   // console.log(m)
+    if (project !== undefined) {
+      m.projectNameLocker = project.folderName
+    }
+
+    // console.log("Refresh project MD, sending :")
+    // console.log(m)
 
     //Application
     setState(m)
     return m
   }
 
+
+
+
+
+
   function setHistoryState(historyEnabled) {
     const m = { ...state }
     m.historyDisplay = historyEnabled
     m.projectNameLocker = ""//Pour faire un force reload du markdown
 
-   // console.log("Refresh history display = " + historyEnabled)    
+    
+    // console.log("Refresh history display = " + historyEnabled)    
     setState(m)
- 
-
   }
 
-  //Modifier le titre en haut de page du projet. On passe le state en paramètre car à cause du fucking asynchrone ont sait jamais quand State(usestate) sera update
-  function setProjectImageTitle(stateGenerated, title) {
-    //Dupplication de l'ancien state
-    const m = { ...stateGenerated }
 
-    if (!m.projectTitleIsImage) {
-    //  console.log("Refresh image title")
-      m.projectTitle = title
-      m.projectTitleIsImage = true
-      setState(m)
-    }
-  }
+
+
+  
+  ///////////////////////////Démarrage
+
+
 
 
   //Liste des projets précédents/suivants, actualisé dynamiquement avec le choix du menu principal
   let nextPreviousProjects = undefined
 
 
-  //faire une loadbar svp
-
-  //console.log(props)
-
-  if (props?.project == undefined) {
+  if (props?.project === undefined) {
     //console.log("Classic error")
     return draw404Project()
   }
@@ -113,24 +110,6 @@ const ProjectPage = (props) => {
 
 
 
-
-
-  //Le use Effect n'est pas appelé au changement de routes, c'est chiant (seulement au reload de la page)
-  /* 
-    useEffect(() => {  }, [projectMd]);
-  
-  
-  useEffect(() => {
-      console.log("TEST")
-      console.log(props)
-      console.log(props.project)
-  
-      
-  
-      if(project != undefined)
-        refreshMd(project);
-      }, []);
-  */
 
 
   async function refreshMd() {
@@ -164,15 +143,23 @@ const ProjectPage = (props) => {
         return
       }
 
-      content = ChangeNextPreviousProjects(content) // Modification des balises <nextprojects>
+
+      //content = ChangeNextPreviousProjects(content) // Modification des balises <nextprojects>
       content = ShowHistoryMode(content, state.historyDisplay)//Supression / affichage des balises <history>
+      
+
+      if(!/(?:<title>[\s\S]*?<\/title>|<title\/>)/g.test(content))
+        content = "<title></title>" + content
+      
+      
+      
 
 
 
 
 
       const stateGenerated = setProjectMd(content, project)
-      findProjectTitleCallBack(project, stateGenerated)//Déclenchera une update de la page si une image est trouvée
+      //findProjectTitleCallBack(project, stateGenerated)//Déclenchera une update de la page si une image est trouvée
 
       //console.log("Md loaded!" + content)
 
@@ -188,7 +175,7 @@ const ProjectPage = (props) => {
 
 
 
-  if (state.projectNameLocker.localeCompare(project.folderName) != 0) {
+  if (state.projectNameLocker.localeCompare(project.folderName) !== 0) {
     console.log("Trying to load " + project.folderName)
     refreshMd();
   }
@@ -198,29 +185,35 @@ const ProjectPage = (props) => {
 
 
 
-  function ChangeNextPreviousProjects(content) {
+  function GetNextPreviousProject() {
     //On cherche le projet suivant et précédent
     const projects = JSON.parse(window.sessionStorage.getItem("renderedProjects"));
+    let result = <></>
 
     if (projects != null) {
       let index = projects.findIndex(findProj => findProj.folderName === project.folderName);
 
-      nextPreviousProjects = "\n\n"
-      if (index > 0)
-        nextPreviousProjects += `> Projet suivant -  [${projects[index - 1].name}](/Jub_Biography/projects/${projects[index - 1].folderName})\n\n`
-      if (index < projects.length - 1)
-        nextPreviousProjects += `> Projet précédent - [${projects[index + 1].name}](/Jub_Biography/projects/${projects[index + 1].folderName})\n\n`
+      nextPreviousProjects = []
+
+      nextPreviousProjects.push(<br key="elem1" />)
+
+      if (index > 0) {
+        nextPreviousProjects.push(<p key="elem2">Projet suivant - <Link to={`/Jub_Biography/projects/${projects[index - 1].folderName}`}>{projects[index - 1].name}</Link></p>)
+      }
+      if (index < projects.length - 1) {
+        nextPreviousProjects.push(<p key="elem3">Projet précédent - <Link to={`/Jub_Biography/projects/${projects[index + 1].folderName}`}>{projects[index + 1].name}</Link></p>)
+      }
 
       // console.log("Generating previous & next projects " + index)
       //On applique les modifications du texte
       if (nextPreviousProjects != null)
-        content = content.replace(/(<nextprojects>)[\s\S]*(<\/nextprojects>)/g, `</br>${nextPreviousProjects}`);
+        result = <>{nextPreviousProjects}</>;
 
-
-    } else
+    } else {
       console.log("Projects array is null !")
+    }
 
-    return content
+    return result
   }
 
 
@@ -235,7 +228,7 @@ const ProjectPage = (props) => {
       content = content.replace(/(<history>)([\s\S]*?)(<\/history>)/g, "$1$3\n\n$2\n\n");
     } else {
 
-      const photoRegex = /\!\[.*\].*\(.*\)/g
+      const photoRegex = /!\[.*\].*\(.*\)/g
       content = content.replace(/(<history>)[\s\S]*?(<\/history>)/g, RemHistory);
 
       function RemHistory(text, capture1, capture2) {
@@ -243,7 +236,6 @@ const ProjectPage = (props) => {
         const photos = [...text.matchAll(photoRegex)];
         return capture1 + capture2 + photos.join("\n")
       }
-
     }
 
     //console.log(content)
@@ -255,47 +247,10 @@ const ProjectPage = (props) => {
 
 
 
+  
 
 
 
-
-  /*<p> Créer en {GetMonthName(project.creation.month)} {project.creation.year}</p>*/
-
-
-  ///Chercher l'image ou le texte de titre du projet
-  function findProjectTitleCallBack(project, stateGenerated) {
-
-    //Pour le project title, si une image existe, on la prend, sinon on met juste le titre du projet
-
-    let projectImage = `/Jub_Biography/Projects/${project.folderName}/./medias/title.png`
-
-    const img = new Image();
-    img.onload = () => setProjectImageTitle(stateGenerated,<img src={projectImage} alt="Project title" id="TitleImage" ></img>);
-    img.onerror = () => console.log("No title image found");
-    img.src = projectImage;
-
-
-
-    /*
-        const onFailed = () => {
-          console.log("IMAGE NOT FOUND")
-          return <h1>{project.name}</h1>
-        }
-    
-        const onSuccess = () => {
-          console.log("IMAGE FOUND")
-          return <img src={projectImage} alt="Project title" id="TitleImage" ></img>
-        }
-    
-        const img = new Image();
-        img.src = projectImage;
-    
-        if (img.width == 0)
-          return onFailed()
-        else
-          return onSuccess()
-    */
-  }
 
 
 
@@ -303,52 +258,75 @@ const ProjectPage = (props) => {
   return (
     <div>
 
-      <div>
-      {state.projectTitle}
-      </div>
-
       <div className="ReactMarkdown">
         <ReactMarkdown
           rehypePlugins={[rehypeRaw]}
           transformImageUri={uri =>
             uri.startsWith("http") ? uri : `${project.folderPath + "/"}${uri}`
           }
-          
+
           components={{
+            p: "span",
             // @ts-ignore
             history: () => {
               return (
-                <history><button className="funky_text_button" onClick={() => setHistoryState(!state.historyDisplay)}>{!state.historyDisplay && "Voir plus d'infos" || "Voir moins d'infos"}</button></history>
+                <history><button className="funky_text_button" onClick={() => setHistoryState(!state.historyDisplay)}>{(!state.historyDisplay && "Voir plus d'infos") || "Voir moins d'infos"}</button></history>
               );
             },
+
             imagegroup: (m) => {
               return (
                 <div className="imagegroup"></div>
               );
 
             },
+
             //Changement de la navigation a travers les pages
             a: (props) => {
-              console.log(props)
-             return <Link to={props.href}>{props.children}</Link>
+              // console.log(props)
+              return <Link to={props.href}>{props.children}</Link>
             },
 
+            autotab: () => <>{GetProjectInfos_TableMode(project)}</>,
 
+            title: () => {
 
+          
+
+              if (!imageNotFound) {
+               
+                return (
+                <img
+
+                  alt={`Project title : ${project.name}`} id="TitleImage"
+                  src="medias/title.png"
+
+                  onError={() => {
+
+                      setImageNotFound(true)
+                    }
+                  }         
+                />)
+              }
+
+              return <h1>{project.name}</h1>
+
+            },
+
+            nextprojects: () => {
+              return GetNextPreviousProject()
+            },
 
           }}
 
 
 
 
-        >{state.projectMd}</ReactMarkdown>
+        >{"<p></p>" + state.projectMd}</ReactMarkdown>
 
       </div>
     </div>
   )
-
-
-
 }
 
 

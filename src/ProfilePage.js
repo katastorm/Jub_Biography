@@ -45,7 +45,7 @@ function ProfilePage(props) {
 
   const boxShiftStyle = {
     marginLeft : `50px`,
-    "margin-bottom": `50px`
+    "marginBottom": `50px`
   }
 
   const greyText = {
@@ -53,7 +53,6 @@ function ProfilePage(props) {
   }
   const ulShift = {
     marginLeft : `30px`,
-    
   }
 
 
@@ -64,28 +63,28 @@ function WriteWorkBundle(job) {
 
 
   const li = []
+ let id = 0
 
   job.subdesc.forEach(element => {
-    li.push(<li>{element}</li>)
+    li.push(<li key={id++}>{element}</li>)
   });
 
   const content = (
     <div>
       <h3>{job.post}</h3>
       <div style={boxShiftStyle}>
-      <p><a style={greyText}>{job.place}, {job.date}</a><br/>
-        {job.desc}
+      <span><a style={greyText}>{job.place}, {job.date}</a><br/>
+        {job.desc}</span>
           <ul style={ulShift}>
             {li}
-          </ul>
-        </p>
+          </ul>        
       </div>
     </div>
   )
 
 
 
-  return [content]
+  return <>{content}</>
 }
 
 
@@ -103,14 +102,14 @@ return (
 
     <h2>A propos de moi</h2>
 
-    <p>Passionné d'informatique depuis mes 10 ans, j'ai acquis de grandes connaissances aux travers de mes études, mes projets persos et mes expériences professionelles. J'adore la nature, les vidéos en stop motion, la cueillette des champignons... Mais tout ça, ce n'est pas le plus important :
+    <p>Passionné d'informatique depuis mes 10 ans, j'ai acquis de grandes connaissances aux travers de mes études, mes projets persos et mes expériences professionelles. J'adore la nature, les vidéos en stop motion, la cueillette des champignons. 
     </p>
 
 
     <h2>Diplômes</h2>
 
 
-    <table><thead>
+    <table className='old_blue_table'><thead>
       <tr>
         <th>Niveau</th>
         <th>Filière</th>

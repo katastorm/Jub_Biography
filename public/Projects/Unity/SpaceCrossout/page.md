@@ -1,9 +1,5 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>janvier 2017</td>
-        <td>mai 2017</td>
-        <td>medium</td><td>very cool</td>
-        <td>Prototype jouable</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<autotab></autotab>
 
 ## Description
 
@@ -43,10 +39,4 @@ Cependant il est possible de créer son propre vaisseau en le construisant élé
 
 Je ressens beaucoup de fierté envers ce projet et son déroulement, c'était instructif de bout en bout.
 
-<nextprojects>
-
-> Projet précédent -  [Slender Letard](/Jub_Biography/projects/Unity/SlenderRetard)
-
-> Projet suivant -  [PaperKata platformer](/Jub_Biography/projects/Unity/PaperKata)
-
-</nextprojects>
+<nextprojects></nextprojects>

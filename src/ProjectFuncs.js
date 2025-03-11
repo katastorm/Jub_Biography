@@ -1,12 +1,9 @@
 
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
-import ReactDom from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/FrontPage.scss';
 
 
-import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 //import { useLocation } from "wouter";
@@ -17,6 +14,46 @@ function GetMonthName(monthNumber) {
   const date = new Date();
   date.setMonth(monthNumber - 1);
   return date.toLocaleString('fr-FR', { month: 'long' });
+}
+
+
+/**
+* Retourne le projet en format JSX tableau  
+*/
+function GetProjectInfos_TableMode(project, bigTable = false) {
+
+
+  let start_status = `${GetMonthName(project.creation.month)} ${project.creation.year}`;             
+  let end_status = project.inDeveloppement? "En développement": `${GetMonthName(project.ending.month)} ${project.ending.year}`; 
+          
+  
+  if(bigTable){
+
+  
+             return (
+             <table className='old_blue_table'><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
+             <td>{start_status}</td>
+             <td>{end_status}</td>
+             <td>{project.tab_devType}</td>
+             <td>{project.tab_wowEffect}</td>
+             <td>{project.tab_projectType}</td>
+             <td>{project.tab_isOnlineGame}</td>             
+             </tr></tbody></table>)
+  }
+
+  return (
+    <table className='table_compact_horizontal_big'>
+    <tbody>
+    <tr><th colSpan="2" className='table_cell_centered table_cell_title_decorator'>Récap Technique</th></tr>
+    <tr><td>Date de création</td><td>{start_status}</td></tr>
+    <tr><td>Finalisation</td><td>{end_status}</td></tr>
+    <tr><td>Ampleur du projet</td><td>{project.tab_devType}</td></tr>
+    <tr><td>Wow effect</td><td>{project.tab_wowEffect}</td></tr>
+    <tr><td>Type de projet </td><td>{project.tab_projectType}</td></tr>
+    <tr><td>En Ligne</td><td>{project.tab_isOnlineGame}</td></tr>          
+    </tbody>
+    </table>)
+
 }
 
 
@@ -33,18 +70,18 @@ const ProjectPopup = (project, drawPreview) => {
 
 
 
-  let prev = <img src={""}></img>
+  let prev = <></>
 
   if (drawPreview) {
     prev = (
-      <img src={project.preview}></img>
+      <img src={project.preview} alt='project preview'></img>
     );
   }
 
   //let dateText =  " - "  + GetMonthName(project.ending.month+1) + " " + project.ending.year
   let dateText = project.creation.year.toString()
 
-  if (project.creation.year != project.ending.year)
+  if (project.creation.year !== project.ending.year)
     dateText = dateText + " - " + project.ending.year
 
 
@@ -85,7 +122,7 @@ function GetPreview(props) {
       <div className="ProjectBox img-zoom-in" onClick={() =>   navigate("/Jub_Biography/projects/" + project.folderName)}>
 
 
-        <img src={project.preview} alt="Image not found" />
+        <img src={project.preview} alt="Preview not found" />
 
         <p className='ProjectTitle'>{project.name}</p>
 
@@ -106,4 +143,4 @@ function GetPreview(props) {
 
 
 
-export { GetPreview, ProjectPopup, GetMonthName };
+export { GetPreview, ProjectPopup, GetMonthName, GetProjectInfos_TableMode };

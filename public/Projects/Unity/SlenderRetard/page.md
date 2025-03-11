@@ -1,9 +1,5 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>octobre 2016</td>
-        <td>février 2017</td>
-        <td>medium</td><td>epic</td>
-        <td>Jeu complet</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<autotab></autotab>
 
 ## Description
 
@@ -28,10 +24,4 @@ Le jeu est terminé, et marche extrémement bien ! Il y a quasi 0 retour de bugs
 
 ![](./medias/img2.jpg)
 
-<nextprojects>
-
-> Projet précédent -  [Chicken Shock Giga Omelette](/Jub_Biography/projects/Unity/ChickenShock_GigaOmelette)
-
-> Projet suivant -  [Space crossout](/Jub_Biography/projects/Unity/SpaceCrossout)
-
-</nextprojects>
+<nextprojects></nextprojects>
