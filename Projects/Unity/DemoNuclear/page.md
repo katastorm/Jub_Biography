@@ -1,10 +1,6 @@
+<title></title>
 
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>avril 2016</td>
-        <td>mai 2016</td>
-        <td>ultra small</td><td>cool</td>
-        <td>Prototype court</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<autotab></autotab>
 
 ## Description
 
@@ -34,10 +30,4 @@ Mais au niveau lycée, il est facile de commencer à utiliser de plus en plus de
 </history>
 
 
-<nextprojects>
-
-> Projet précédent -  [Super Gun Fight](/Jub_Biography/projects/Unity/SuperGunFight)
-
-> Projet suivant -  [Chicken Shock Giga Omelette](/Jub_Biography/projects/Unity/ChickenShock_GigaOmelette)
-
-</nextprojects>
+<nextprojects></nextprojects>

@@ -1,15 +1,12 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>mars 2020</td>
-        <td>avril 2021</td>
-        <td>medium</td><td>very cool</td>
-        <td>Prototype jouable</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+
+![inventory anim](./medias/inventory.gif)
 
 ## Description
 
 Jeu fortement inspiré de `Minecraft`.
 
-![inventory anim](./medias/inventory.gif)
+<autotab></autotab>
 
 ## Contexte
 
@@ -33,10 +30,10 @@ Generer des chunks de (32 * 32 * 128) blocs, dans un champ de vision de 16 chunk
 Pendant cette première phase de dev, tout était "Critique". Le type de données utilisés pour les cubes, la façon dont ils étaient générés, puis affichés. Chacunes des ces étapes seraient répétés 33.54 millions de fois durant le jeu, il fallait donc prendre des précautions. Assez rapidmeent, l'affichage de gigantesques meshs multi-matériaux fut apréhendé. On eu alors des premiers prototypes de terrains. La génération était faite avec des noises (cellular noise pour les biomes). Un gros problème aura été de trouver une manière de connecter les biomes entre eux, de manière "smooth", mais grâce au math, on peut tout faire.
 
 <imagegroup></imagegroup>
-![Terrain](./medias/mesh3.jpg)
+![Terrain](./medias/biomes.gif)
 ![Terrain](./medias/mesh4.jpg)
 
-![Terrain](./medias/biomes.gif)
+![Terrain](./medias/mesh3.jpg)
 *premières ébauches des terrains*
 
 
@@ -61,7 +58,9 @@ A partir de ce moment là, des gens étaient interessés pour travailler sur le 
 ## Produit final
 
 Le prototype est jouable, avec une arrivée sur la map dont la génération est infinie. Il existe 5 biomes différents, et le plusieurs joueurs peuvent se connecter sur le même map. Les fonctionnalités d'inventaire, de gestion des objets ainsi que le système de pioche sont fonctionnelles.
-
+- Pas assez de veille à été faite sur les manières des gerer des milliards d'objets dans unity. L'utilisation de compute shaders pour le calcul des blocks aurait clairement été une meilleure solution que d'utiliser le CPU pour generer les meshes
+- Montée en compétence sur la manipulation de vertex/création de modèles 3D
+- Montée en compétence niveau profiling / optimisations
 
 
 ## Ressenti
@@ -119,10 +118,4 @@ A tout moment du projet, très optimiste et heureux du résultat - toutes les fo
 
 
 
-<nextprojects>
-
-> Projet précédent -  [Historycon](/Jub_Biography/projects/Unity/historyGit)
-
-> Projet suivant -  [Underwar](/Jub_Biography/projects/Unity/Underwar)
-
-</nextprojects>
+<nextprojects></nextprojects>

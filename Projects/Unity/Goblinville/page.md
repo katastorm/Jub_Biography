@@ -1,11 +1,7 @@
+<title></title>
 
 
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>octobre 2014</td>
-        <td>novembre 2014</td>
-        <td>ultra small</td><td>null</td>
-        <td>Prototype court</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<autotab></autotab>
 
 ## Description
 
@@ -18,10 +14,4 @@ Le résultat de ce test est composé d'une seule scène, avec un design ultra co
 ![](./medias/img1.jpg)
 
 
-<nextprojects>
-
-> Projet précédent -  [Slender 1.0](/Jub_Biography/projects/Unity/Slender1)
-
-> Projet suivant -  [RPG 2D](/Jub_Biography/projects/Unity/RPG2D)
-
-</nextprojects>
+<nextprojects></nextprojects>

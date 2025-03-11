@@ -1,25 +1,27 @@
+<title></title>
 
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>mai 2018</td>
-        <td>En cours de dev</td>
-        <td>xxl</td><td>epic</td>
-        <td>Jeu complet</td><td>NO</td>
-        </tr></tbody></table></autotab>
+
+
+
+
+
+<iframe width="896" height="504" src="https://www.youtube.com/embed/MPfe4zVcUSw?si=VyH18GPODK-wfj3k&hd=1" title="YouTube video player" frameborder="0"   allowfullscreen></iframe>
 
 ## Description
 
-Jeu de type "Biding of Isaac" ou "Enter the gungeon", thémé sur la lumière. Une aventure solo, où le joueur progresse dans l'obscurité. Chaque étage est plus sombre et plus dangereux que le précédent !
+Jeu de type "Biding of Isaac" ou "Enter the gungeon", thème sur la lumière. Une aventure solo, où le joueur progresse dans l'obscurité. Chaque étage est plus sombre et plus dangereux que le précédent !
 
-<iframe width="896" height="504" src="https://www.youtube.com/embed/MPfe4zVcUSw?si=VyH18GPODK-wfj3k&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<autotab></autotab>
 
 ## Contexte
 
-Fin de terminale S. Aprés la franche réussite au sein de notre classe de [ChickenShockGigaOmelette](/Jub_Biography/projects/Unity/ChickenShock_GigaOmelette), avec Max on décide de se lancer dans une nouvelle aventure ! Le développement d'un roguelike sur le théme de la lumière. 
-![Image du pathfinding](./medias/img3.jpg)
+Fin de terminale S. Aprés la franche réussite au sein de notre classe de [ChickenShockGigaOmelette](/Jub_Biography/projects/Unity/ChickenShock_GigaOmelette), on décide de se lancer dans une nouvelle aventure ! Le développement d'un Roguelike sur le thème de la lumière. 
+![Screen ingame](./medias/img3.jpg)
+*Screen ingame*
 
 ## Développement
 
-Avec Max, On a énormément travaillé sur le projet en collaboration intense durant les premières années. Comme pour [CSGO](/Jub_Biography/projects/Unity/ChickenShock_GigaOmelette), il faisait les graphismes et moi le développement (donc je faisait 80% du taff, ahah). Petit à petits, nous sommes chacun parti de notre coté. On avait beau vivre en coloc, entre les études et les autres projets personnels, c'est devenu difficile de se coordonner et de garder une motivation d'équipe. Niveau dev, c'est clairement mon plus gros projet. Enormément d'outils ont été conçu spécialement pour le jeu, à l'époque le package Unity2D pour faire des tilesets ainsi que la pipeline de rendu URP n'hexistaient pas ! Le jeu est donc un bricolage d'optimisation et de solutions techniques sorties de nulles pars. Voici quelques idées des solutions complexes mises en place au seins du jeu :
+Avec [Max](https://www.linkedin.com/in/maxime-baron-3306881a3/), on a fait une collaboration intense durant les premières années. Comme pour [CSGO](/Jub_Biography/projects/Unity/ChickenShock_GigaOmelette), il faisait les graphismes et moi le développement (donc je faisait 80% du taff, ahah). Petit à petits, nous sommes chacun parti de notre coté. Niveau dev, c'est clairement mon plus gros projet. Enormément d'outils ont été conçu spécialement pour le jeu, à l'époque le package Unity2D pour faire des tilesets ainsi que la pipeline de rendu URP n'hexistaient pas ! Le jeu est donc un bricolage d'optimisation et de solutions techniques sorties de nulles pars. Voici quelques idées des solutions complexes mises en place au seins du jeu :
 
 - Système multilangue & localisation
 - Système de positionnemement de salles aléatoires
@@ -40,10 +42,12 @@ Etant donné que le projet a été commencé lorsque j'avais 17 ans, je n'avais 
 
 
 
-
 ## Produit final
 
-Pour l'instant, on a un projet toujours en cours de développement, cependant, le jeu est jouable ! Il y a plein de niveaux, de boss(s)... Au moins 2h de gameplay facile ! Et ça envoie du lourd.
+- Actuellement nous sommes une équipe de 4
+- Le projet toujours en cours de développement
+- Beaucoup de niveaux, de boss(s), d'ennemis et d'items on été implémentés;
+- Au moins 2h de gameplay facile 
 
 
 <img src="./medias/lol_loop_main.gif" title="" alt="Loop animation" data-align="center">
@@ -58,10 +62,4 @@ Beaucoup de fiérté ! C'est clairement mon projet favori. Souvent les moments o
 ![Image du pathfinding](./medias/img2.jpg)
 
 
-<nextprojects>
-
-> Projet précédent -  [PaperKata platformer](/Jub_Biography/projects/Unity/PaperKata)
-
-> Projet suivant -  [Mr. Kata Die It Yoursefl](/Jub_Biography/projects/Unity/MrKata_DieItYoursefl)
-
-</nextprojects>
+<nextprojects></nextprojects>

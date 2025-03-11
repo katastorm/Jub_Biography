@@ -1,17 +1,15 @@
+<title></title>
 
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>décembre 2022</td>
-        <td>août 2024</td>
-        <td>medium</td><td>very cool</td>
-        <td>Prototype jouable</td><td>NO</td>
-        </tr></tbody></table></autotab>
+![Map générée procéduralement](./medias/img1.jpg)
+
+
 
 ## Description
 
 Tous les joueurs appaissent dans une map eneigée. Ils ont 3 minutes pour se serrer les coudes, trouver armes & nourriture avant la tombée de la nuit. Eastone est un prototype de jeu de survie multijoueur, avec un rythme rapide.  
 
 
-![Map générée procéduralement](./medias/img1.jpg)
+<autotab></autotab>
 
 
 
@@ -57,9 +55,4 @@ Un système complexe au niveau du réseau à été mis en place. Il fallait pouv
 ![image de la doc](./medias/img3.jpg)
 
 
-<nextprojects>
-
-> Projet précédent -  [Projet VR ESIEE 
-Room 505](/Jub_Biography/projects/Unity/Room505)
-
-</nextprojects>
+<nextprojects></nextprojects>

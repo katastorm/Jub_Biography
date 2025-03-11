@@ -1,9 +1,5 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>juin 2017</td>
-        <td>février 2018</td>
-        <td>small</td><td>cool</td>
-        <td>Prototype jouable</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<autotab></autotab>
 
 ## Description
 
@@ -25,10 +21,4 @@ On peut se déplacer, s'accroupir, sauter, se battre en donnant des coup de poin
 
 J'aime beaucoup ce prototype car il met en avant un univers trés personnel auxquel je tiens beaucoup.
 
-<nextprojects>
-
-> Projet précédent -  [Space crossout](/Jub_Biography/projects/Unity/SpaceCrossout)
-
-> Projet suivant -  [Lack Of Light](/Jub_Biography/projects/Unity/LackOfLight)
-
-</nextprojects>
+<nextprojects></nextprojects>

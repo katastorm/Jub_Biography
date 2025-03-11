@@ -1,16 +1,13 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>octobre 2021</td>
-        <td>juillet 2022</td>
-        <td>large</td><td>very cool</td>
-        <td>Prototype jouable</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<iframe width="896" height="504" src="https://www.youtube.com/embed/sOHHD-aJkuQ?si=xSddC2NbXiyy4RhD&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Description
 
 Room 505 est un jeu d'exploration et d'horreur multijoueur en VR. Les joueurs doivent s'échaper d'un hotel, en cherchant des objets et des indices dans les chambres.
 
+<autotab></autotab>
 
-<iframe width="896" height="504" src="https://www.youtube.com/embed/sOHHD-aJkuQ?si=xSddC2NbXiyy4RhD&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 ## Contexte
 
@@ -21,7 +18,7 @@ Projet en équipe de 6. Développé en tant que projet de fin d'année de notre 
 
 ## Développement
 
-En tout premier, beaucoup de brainstormings. Quel type de jeu ? Quel ambiance ? Rapidement l'idée du jeu en VR multi est apparue. Etant le plus à l'aise sur Unity, j'ai été un peu la plus grande force de proposition, bien que je n'étais pas le chef de projet. Ainsi on voulait faire une map qui puisse de générer de manière procédurale histoire que chaque run soit différente. En fait j'avais déja développé un package permettant du positionnement de salle, un peu comme dans [LackOfLight](/Jub_Biography/projects/Unity/LackOfLight). C'était un avantage.
+En tout premier, beaucoup de brainstormings. Quel type de jeu ? Quel ambiance ? Rapidement l'idée du jeu en VR multi est apparue. Etant le plus à l'aise sur Unity, j'ai été un peu la plus grande force de proposition, bien que je n'étais pas le chef de projet. Ainsi on voulait faire une map qui puisse de générer de manière procédurale histoire que chaque run soit différente. En fait j'avais déja développé un package permettant du positionnement de salle, un peu comme dans [LackOfLight](/Jub_Biography/projects/Unity/LackOfLight/). C'était un avantage.
 
 
 <imagegroup></imagegroup>
@@ -88,10 +85,4 @@ C'est seulement en cours de développement qu'on a remarqué : entre les lightma
 
 
 
-<nextprojects>
-
-> Projet précédent -  [Robot industry V2](/Jub_Biography/projects/Unity/Robotindustry)
-
-> Projet suivant -  [Eatstone](/Jub_Biography/projects/Unity/Eatstone)
-
-</nextprojects>
+<nextprojects></nextprojects>

@@ -1,9 +1,5 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>mars 2015</td>
-        <td>septembre 2015</td>
-        <td>small</td><td>null</td>
-        <td>Prototype court</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<autotab></autotab>
 
 ## Description
 
@@ -22,10 +18,4 @@ Je reste fier des cinématiques créatives du début, ainsi que des fonctionnali
 ![](./medias/img2.jpg)
 
 
-<nextprojects>
-
-> Projet précédent -  [Goblinville FPS](/Jub_Biography/projects/Unity/Goblinville)
-
-> Projet suivant -  [Steel bullet fury](/Jub_Biography/projects/Unity/SteelBulletFury)
-
-</nextprojects>
+<nextprojects></nextprojects>

@@ -1,11 +1,7 @@
+<title></title>
 
 
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>juillet 2016</td>
-        <td>juillet 2018</td>
-        <td>xxl</td><td>epic</td>
-        <td>Jeu complet</td><td>YES</td>
-        </tr></tbody></table></autotab>
+![Image de présentation du jeu](preview.jpg)
 
 ## Description
 
@@ -13,8 +9,8 @@ Jeu de tir multijoueur en 2D, avec un rythme trés rapide. Développé en collab
 
 Jeu publié : [Chicken Shock Giga Omelette by Logiked](https://logiked.itch.io/chicken-shock-giga-omelette)
 
-![Image de présentation du jeu](preview.jpg)
 
+<autotab></autotab>
 
 ## Contexte
 
@@ -29,13 +25,13 @@ Un moment j'ai pu me faire une petite initiation aux bases de données avec du S
 
 ## Produit final
 
-3 modes de jeu jouables dans lesquels les joueurs peuvent jouer en équipe ou en FFA. 
+- 3 modes de jeu jouables dans lesquels les joueurs peuvent jouer en équipe ou en FFA. 
 
-33 armes différentes, aux fonctionnalités multiples telle que armes à feu, lance-flammes, et d'autres plus loufoques.
+- 33 armes différentes, aux fonctionnalités multiples telle que armes à feu, lance-flammes, et d'autres plus loufoques.
 
-Un éditeur de niveaux pour jouer sur ses cartes personnelles, en multijoueur.
+- Un éditeur de niveaux pour jouer sur ses cartes personnelles, en multijoueur.
 
-Le jeu est fonctionnel et en ligne, avec une édition achetable qui permet l'accès à l'intégralité des armes et des chapeaux sans passer par des heures de jeux.
+- Le jeu est fonctionnel et en ligne, avec une édition achetable qui permet l'accès à l'intégralité des armes et des chapeaux sans passer par des heures de jeux.
 
 ![Menu Principal](./medias/capt1.jpg)
 
@@ -94,10 +90,4 @@ Je suis extrêmement fier de ce jeu, qui a eu une très grande popularité au se
 </history>
 
 
-<nextprojects>
-
-> Projet précédent -  [Demo nuclear](/Jub_Biography/projects/Unity/DemoNuclear)
-
-> Projet suivant -  [Slender Letard](/Jub_Biography/projects/Unity/SlenderRetard)
-
-</nextprojects>
+<nextprojects></nextprojects>

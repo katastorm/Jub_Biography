@@ -1,21 +1,16 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>mai 2015</td>
-        <td>janvier 2016</td>
-        <td>large</td><td>cool</td>
-        <td>Jeu complet</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+
+![](./medias/img1.jpg)
 
 ## Description
 
 Jeu de tir multijoueur, avec un mode de jeu "Horreur".
 
-![](./medias/img1.jpg)
+<autotab></autotab>
 
 ## Contexte
 
-`Steel BulletFury` est né à partir d'une envie d'imiter les jeux `Cube 2: Sauerbaten` et `Unreal tournament`. L'idée de pouvoir construire mes propres maps et mes propres mécaniques de jeu me plaisait bien.
-
-L'ajout de la partie *Slender Shrek* vient de mon intérêt pour les jeux d'horreur. J'ai toujours aprécié les jeux d'horreur multijoueur. J'étais souvent sur `Garry's mode` ou `Team fortress`, sur des serveurs de jeu horreur. Je voulais essayer de creer une experience similaire.
+`Steel BulletFury` est né à partir d'une envie d'imiter les jeux `Cube 2: Sauerbaten` et `Unreal tournament`. L'idée de pouvoir construire mes propres maps et mes propres mécaniques de jeu. Ensuite, il y a le mode horreur : Le *Slender Shrek*. J'ai toujours aprécié les jeux d'horreur multijoueur. J'étais souvent sur `Garry's mode` ou `Team fortress`, sur des serveurs de jeu horreur. Je voulais essayer de creer une experience similaire.
 
 
 ## Développement
@@ -23,13 +18,13 @@ L'ajout de la partie *Slender Shrek* vient de mon intérêt pour les jeux d'horr
 
 Le dev est en C#, que je découvrais à l'époque. J'ai commencé par suivre des tutoriels sur *Photon Network* et qui est désormais *Photon Pun* de **Photon Engine**, plugin leader du développement multijoueur sur Unity. Assez rapidement j'ai pu créer une scene, et connecter plusieurs joueurs dessus.
 
-Le mode de jeu `slender-shreek` est issu de l'ancien projet [Slender1]("/Jub_Biography/projects/Slender1). Il a suffit d'un rework général pour être implémentable en multijoueur. L'ajout de quelques props, models 3D, sons ainsi que d'une nouvelle map aura suffit à faire quelque chose de grandiose.
+Le mode de jeu `slender-shreek` est issu d'un ancien projet. Il a suffit d'un rework général pour être implémentable en multijoueur. L'ajout de quelques props, models 3D, sons ainsi que d'une nouvelle map aura suffit à faire quelque chose de grandiose.
 
 ![](./medias/shreek2.gif)
 
 ## Produit final
 
-Depuis le menu principal, le joueur peut choisir entre 3 modes de jeux, 4 maps complexes différentes, des skins et la possibilité de jouer en multi. Que demande le peuple ? J'avais 14 ans et c'est qu'est-ce qu'on s'est marré sur ce jeu.
+Depuis le menu principal, le joueur peut choisir entre 3 modes de jeux, 4 maps complexes différentes, des skins et la possibilité de jouer en multi. Que demande le peuple ? J'avais 14 ans et c'est qu'est-ce qu'on s'est marré entre nos cours.
 
 <video width="896" height="504" controls>
   <source src="/Jub_Biography/Projects/Unity/SteelBulletFury/./medias/dance1.mp4" type="video/mp4">
@@ -79,10 +74,4 @@ Map sur google sketchup: ville (inspi importante enfance warseaw) + marais + hiv
 
 
 
-<nextprojects>
-
-> Projet précédent -  [RPG 2D](/Jub_Biography/projects/Unity/RPG2D)
-
-> Projet suivant -  [Kata's minigames](/Jub_Biography/projects/Unity/MrKataMinigames)
-
-</nextprojects>
+<nextprojects></nextprojects>

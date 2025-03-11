@@ -1,17 +1,12 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>octobre 2019</td>
-        <td>août 2023</td>
-        <td>medium</td><td>very cool</td>
-        <td>Prototype jouable</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<video width="896" height="504" controls>
+  <source src="/Jub_Biography/Projects/Unity/MrKata_DieItYoursefl/./medias/mrKata2.mp4" type="video/mp4">
+</video>
 
 ## Description
 
 Le jeu est un platformer en 2D, avec un concept un peu particulier : La mort du joueur à une utilité au gameplay. En effet, le joueur peut revivre un certain nombre de fois, et mourrir à un endroit en particulier peut s'averer utile. Parfois le cadavre du joueur permet de faire un pont, des fois il peut être posé sur un bouton, etc.
-
-<video width="896" height="504" controls>
-  <source src="/Jub_Biography/Projects/Unity/MrKata_DieItYoursefl/./medias/mrKata2.mp4" type="video/mp4">
-</video>
+<autotab></autotab>
 
 
 
@@ -48,10 +43,4 @@ Plûtot impressionant ! Le jeu comporte quelques niveau jouables et le rapport �
 </video>
 
 
-<nextprojects>
-
-> Projet précédent -  [Lack Of Light](/Jub_Biography/projects/Unity/LackOfLight)
-
-> Projet suivant -  [Historycon](/Jub_Biography/projects/Unity/historyGit)
-
-</nextprojects>
+<nextprojects></nextprojects>

@@ -1,9 +1,5 @@
-<autotab></br><table><thead><tr><th>Date de création</th><th>Finalisation</th><th>Ampleur du projet</th><th>Wow effect</th><th>Type de projet </th><th>En Ligne</th></tr></thead><tbody><tr>
-        <td>mars 2014</td>
-        <td>mai 2015</td>
-        <td>medium</td><td>null</td>
-        <td>Prototype jouable</td><td>NO</td>
-        </tr></tbody></table></autotab>
+<title></title>
+<autotab></autotab>
 
 ## Description
 
@@ -59,10 +55,4 @@ Mes connaissances de la programmation restaient basiques, mais j'étais dans une
 </history>
 
 
-<nextprojects>
-
-> Projet précédent -  [Jeu baston 2D](/Jub_Biography/projects/Unity/Baston2D)
-
-> Projet suivant -  [Slender 1.0](/Jub_Biography/projects/Unity/Slender1)
-
-</nextprojects>
+<nextprojects></nextprojects>
