@@ -20,14 +20,14 @@ function GetMonthName(monthNumber) {
 /**
 * Retourne le projet en format JSX tableau  
 */
-function GetProjectInfos_TableMode(project, bigTable = false) {
+function GetProjectInfos_TableMode(project, oldTable = false) {
 
 
   let start_status = `${GetMonthName(project.creation.month)} ${project.creation.year}`;             
   let end_status = project.inDeveloppement? "En développement": `${GetMonthName(project.ending.month)} ${project.ending.year}`; 
           
   
-  if(bigTable){
+  if(oldTable){
 
   
              return (
@@ -35,11 +35,12 @@ function GetProjectInfos_TableMode(project, bigTable = false) {
              <td>{start_status}</td>
              <td>{end_status}</td>
              <td>{project.tab_devType}</td>
-             <td>{project.tab_wowEffect}</td>
              <td>{project.tab_projectType}</td>
              <td>{project.tab_isOnlineGame}</td>             
              </tr></tbody></table>)
   }
+    /*/<td>{project.tab_wowEffect}</td>*/
+    /*<tr><td>Wow effect</td><td>{project.tab_wowEffect}</td></tr>*/
 
   return (
     <table className='table_compact_horizontal_big'>
@@ -48,7 +49,6 @@ function GetProjectInfos_TableMode(project, bigTable = false) {
     <tr><td>Date de création</td><td>{start_status}</td></tr>
     <tr><td>Finalisation</td><td>{end_status}</td></tr>
     <tr><td>Ampleur du projet</td><td>{project.tab_devType}</td></tr>
-    <tr><td>Wow effect</td><td>{project.tab_wowEffect}</td></tr>
     <tr><td>Type de projet </td><td>{project.tab_projectType}</td></tr>
     <tr><td>En Ligne</td><td>{project.tab_isOnlineGame}</td></tr>          
     </tbody>

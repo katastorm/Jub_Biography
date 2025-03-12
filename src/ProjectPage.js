@@ -299,7 +299,7 @@ const ProjectPage = (props) => {
                 <img
 
                   alt={`Project title : ${project.name}`} id="TitleImage"
-                  src="medias/title.png"
+                  src={`${project.folderPath}medias/title.png`}
 
                   onError={() => {
 
