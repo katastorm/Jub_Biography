@@ -15,13 +15,13 @@ Jeu de type "Biding of Isaac" ou "Enter the gungeon", thème sur la lumière. Un
 
 ## Contexte
 
-Fin de terminale S. Aprés la franche réussite au sein de notre classe de [ChickenShockGigaOmelette](/Jub_Biography/projects/Unity/ChickenShock_GigaOmelette), on décide de se lancer dans une nouvelle aventure ! Le développement d'un Roguelike sur le thème de la lumière. 
+Fin de terminale S. Aprés la franche réussite au sein de notre classe de [ChickenShockGigaOmelette](/Jub_Biography/projects/Unity/ChickenShock_GigaOmelette/), on décide de se lancer dans une nouvelle aventure ! Le développement d'un Roguelike sur le thème de la lumière. 
 ![Screen ingame](./medias/img3.jpg)
 *Screen ingame*
 
 ## Développement
 
-Avec [Max](https://www.linkedin.com/in/maxime-baron-3306881a3/), on a fait une collaboration intense durant les premières années. Comme pour [CSGO](/Jub_Biography/projects/Unity/ChickenShock_GigaOmelette), il faisait les graphismes et moi le développement (donc je faisait 80% du taff, ahah). Petit à petits, nous sommes chacun parti de notre coté. Niveau dev, c'est clairement mon plus gros projet. Enormément d'outils ont été conçu spécialement pour le jeu, à l'époque le package Unity2D pour faire des tilesets ainsi que la pipeline de rendu URP n'hexistaient pas ! Le jeu est donc un bricolage d'optimisation et de solutions techniques sorties de nulles pars. Voici quelques idées des solutions complexes mises en place au seins du jeu :
+Avec [Max](https://www.linkedin.com/in/maxime-baron-3306881a3/), on a fait une collaboration intense durant les premières années. Comme pour [CSGO](/Jub_Biography/projects/Unity/ChickenShock_GigaOmelette/), il faisait les graphismes et moi le développement (donc je faisait 80% du taff, ahah). Petit à petits, nous sommes chacun parti de notre coté. Niveau dev, c'est clairement mon plus gros projet. Enormément d'outils ont été conçu spécialement pour le jeu, à l'époque le package Unity2D pour faire des tilesets ainsi que la pipeline de rendu URP n'hexistaient pas ! Le jeu est donc un bricolage d'optimisation et de solutions techniques sorties de nulles pars. Voici quelques idées des solutions complexes mises en place au seins du jeu :
 
 - Système multilangue & localisation
 - Système de positionnemement de salles aléatoires
