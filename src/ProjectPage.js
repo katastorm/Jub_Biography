@@ -12,7 +12,7 @@ import './styles/FunkyTextButton.scss';
 import { useState } from 'react';
 import { GetProjectInfos_TableMode } from "./ProjectFuncs"
 import rehypeRaw from "rehype-raw";
-import { Route, Link, Routes, useLocation } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const draw404Project = () => {
   return (
@@ -38,7 +38,7 @@ const initialState = {
 
 const ProjectPage = (props) => {
 
-  const location = useLocation();
+
 
   //Setter pour les infos du projet
   const [state, setState] = useState(initialState)
@@ -158,7 +158,7 @@ const ProjectPage = (props) => {
 
 
 
-      const stateGenerated = setProjectMd(content, project)
+      setProjectMd(content, project)
       //findProjectTitleCallBack(project, stateGenerated)//Déclenchera une update de la page si une image est trouvée
 
       //console.log("Md loaded!" + content)

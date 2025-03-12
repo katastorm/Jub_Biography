@@ -25,7 +25,12 @@ function GetProjectInfos_TableMode(project, oldTable = false) {
 
   let start_status = `${GetMonthName(project.creation.month)} ${project.creation.year}`;             
   let end_status = project.inDeveloppement? "En développement": `${GetMonthName(project.ending.month)} ${project.ending.year}`; 
-          
+        
+  
+  const frameWorks = project.tags_technos.length > 0 ? <tr><td>Frameworks/Outils</td><td>{project.tags_technos.join(", ") }</td></tr> : <></>
+  const skills = project.tags_skills.length > 0 ?   <tr><td>Compétences</td><td>{project.tags_skills.join(", ") }</td></tr> : <></>
+
+
   
   if(oldTable){
 
@@ -47,10 +52,15 @@ function GetProjectInfos_TableMode(project, oldTable = false) {
     <tbody>
     <tr><th colSpan="2" className='table_cell_centered table_cell_title_decorator'>Récap Technique</th></tr>
     <tr><td>Type de projet </td><td>{project.tab_projectType}</td></tr>
-    <tr><td>Environnement technique</td><td>{project.tags_technos.join(", ") }</td></tr>
     <tr><td>Langages</td><td>{project.tags_languages.join(", ") }</td></tr>
+    <tr><td>Logiciels</td><td>{project.tags_softwares.join(", ") }</td></tr>
+    {frameWorks}
+    {skills}
+
     <tr><td>Equipe</td><td>{project.membersCount > 1 ? `${project.membersCount} Membres`: "Projet solo"}</td></tr>
-    <tr><th colSpan="2" className='table_cell_centered table_cell_title_decorator'></th></tr>
+    
+    <tr><th colSpan="2" className='table_cell_title_decorator'></th></tr>
+    <tr></tr>
 
     <tr><td>Date de création</td><td>{start_status}</td></tr>
     <tr><td>Finalisation</td><td>{end_status}</td></tr>

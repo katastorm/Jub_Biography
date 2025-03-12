@@ -17,27 +17,25 @@ const DrawHeaderNav = () => {
 
   return (
 
-
-
-
+    
     <nav className="Body-Position">
       <div className="logo">
-        <a > Jub Portfolio </a >
+        <a href={() => false}> Jub Portfolio </a >
       </div>
 
 
 
-
       <ul className="nav-links">
-        <li><a onClick={() => handleClick("/Jub_Biography/profile")}>Profil</a></li>
-        <li><a onClick={() => handleClick("/Jub_Biography/home")}>Projets Unity</a></li>
+        <li><a href={() => false} onClick={() => handleClick("/Jub_Biography/profile")}>Profil</a></li>
+        <li><a href={() => false}  onClick={() => handleClick("/Jub_Biography/home")}>Projets Unity</a></li>
       </ul>
 
       <ul className="nav-logos">
         <li><a href="https://www.linkedin.com/in/julien-faidide-17397b174/">
-            <img src="/Jub_Biography/in-logo.png"/>
+            <img alt="linkedin link" src="/Jub_Biography/in-logo.png"/>
           </a></li>
       </ul>
+
 
 
 

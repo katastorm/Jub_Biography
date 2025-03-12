@@ -1,8 +1,5 @@
-import { GetPreview } from './ProjectFuncs.js';
-import GetTimeline from './Timeline.js';
-import './styles/FrontPage.scss';
 
-import { useState, useEffect } from 'react';
+import './styles/FrontPage.scss';
 
 
 
@@ -88,7 +85,6 @@ function WriteWorkBundle(job) {
 }
 
 
-
 return (
 
   <div>
@@ -97,7 +93,7 @@ return (
     <h1>Julien Faidide</h1>
 
 
-    <img src='/Jub_Biography/images/julienFace.jpg' alt='Photo de moi'></img>
+    <img src='/Jub_Biography/images/julienFace.jpg' alt='julien'></img>
 
 
     <h2>A propos de moi</h2>
@@ -150,9 +146,6 @@ return (
     {WriteWorkBundle(exp1)}
     {WriteWorkBundle(exp2)}
     {WriteWorkBundle(exp3)}
-
-
-
 
 
 

@@ -3,13 +3,13 @@
 import FrontPage from "./FrontPageUnity";
 import ProjectPage from "./ProjectPage";
 import ProfilePage from "./ProfilePage";
-import PageNotFound from "./404";
+//import PageNotFound from "./404";
 import { DrawHeaderNav, DrawFooterNav } from './NavHeader.js';
 import { useState, useEffect } from 'react';
 import folders from "./projectList.json"
-import { prettyFormat } from "@testing-library/react";
+//import { prettyFormat } from "@testing-library/react";
 import ParralaxBackground from './jquerry/ParralaxBackground.js';
-import { HashRouter, BrowserRouter, Routes, Route, Navigate, useParams, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 
 
 
@@ -62,7 +62,7 @@ const App = () => {
 
         // console.log(imageBlob.type)
 
-        if (imageBlob == undefined || !imageBlob.type.includes("image")) {
+        if (imageBlob === undefined || !imageBlob.type.includes("image")) {
             return defUrl;
         }
 
@@ -89,11 +89,11 @@ const App = () => {
             try {
 
                 //Si c'est la première init, executé 1 fois
-                if (content.preview == undefined) {
+                if (content.preview === undefined) {
 
                     content.inDeveloppement = false;
 
-                    if (content.ending == undefined) {
+                    if (content.ending === undefined) {
                         content.ending = {
                             "year": (currentDate.getFullYear()),
                             "month": (currentDate.getMonth()),
@@ -155,7 +155,7 @@ const App = () => {
             modified += "/";
 
 
-        if (allPaths != modified)
+        if (allPaths !== modified)
             return <Navigate to={"/Jub_Biography/projects/" + modified} replace/>
         else
             return (

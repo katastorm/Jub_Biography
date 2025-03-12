@@ -1,7 +1,7 @@
-@use "react-md" as *;
+//@use "react-md" as *;
 
 // this will include all the styles from react-md
-@include react-md-utils;
+//@include react-md-utils;
 
 
 @font-face {
@@ -38,6 +38,7 @@ body {
   background-color: rgba($color: #000, $alpha: 0);
 
 }
+
 
 .Body {
 
@@ -350,8 +351,27 @@ span,
 li,
 form {
   font-size: large;
+  font-weight: 50;
   text-justify: inter-word;
   text-align: justify;
+}
+
+a{
+  transition: color 0.1s ease;
+}
+
+a:active {
+  color: #2196F3;
+  transition: color 0.1s ease;
+}
+
+a:visited {
+  color: #8e1dcffd; 
+  transition: color 0.1s ease;
+}
+a:hover {
+  color: #8acaff;
+  transition: color 0.1s ease;
 }
 
 

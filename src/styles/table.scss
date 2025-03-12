@@ -1,39 +1,33 @@
-
-
-
-
-
-
 table.old_blue_table {
 	width: 800px;
 	max-width: 100%;
 	border-collapse: collapse;
 	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 
 
-th,
- td {
-	padding: 15px;
-  font-size: large;
-	background-color: rgba(255,255,255,0.2);
-	color: #fff;
-}
+	th,
+	td {
+		padding: 15px;
+		font-size: large;
+		background-color: rgba(255, 255, 255, 0.2);
+		color: #fff;
+	}
 
- th {
-	text-align: left;
-  font-size: large;
-}
+	th {
+		text-align: left;
+		font-size: large;
+	}
 
-thead {
- th {
-		background-color: #55608f;
+	thead {
+		th {
+			background-color: #55608f;
+		}
 	}
 }
-}
 
 
-table.table_compact_horizontal_big{
+table.table_compact_horizontal_big {
 	width: 600px;
 	max-width: 100%;
 	margin-top: 30px;
@@ -49,7 +43,8 @@ table.table_compact_horizontal_small {
 
 
 
-table.table_compact_horizontal_big, table.table_compact_horizontal_small {
+table.table_compact_horizontal_big,
+table.table_compact_horizontal_small {
 
 
 
@@ -60,7 +55,6 @@ table.table_compact_horizontal_big, table.table_compact_horizontal_small {
 	margin-right: auto;
 
 	//Paddings
-	padding-bottom: 8px;
 
 
 	//Texte
@@ -71,7 +65,7 @@ table.table_compact_horizontal_big, table.table_compact_horizontal_small {
 	//Bordures
 	border-collapse: collapse;
 	background-color: rgba(0, 0, 0, .75);
-	border-collapse: separate; 
+	border-collapse: separate;
 	border-radius: 10px;
 	box-shadow: 0 0 1px 1px white inset, 0 0 1px 0px white inset, 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
 
@@ -79,35 +73,50 @@ table.table_compact_horizontal_big, table.table_compact_horizontal_small {
 	overflow: hidden;
 
 
-th,
- td {
-	padding: 8px 5px 0px 5px;
-  font-size: large;
-	//background-color: rgba(255,255,255,0.2);
-	color: #fff;
-	text-align: left;
+
+	@media screen and (max-width: 1200px) {
+		tr:nth-child(even) {
+			background-color: #1a1a1a;
+		}
+	}
+
+
+
+	th,
+	td {
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+
+		font-size: large;
+		//background-color: rgba(255,255,255,0.2);
+		color: #fff;
+		text-align: left;
+		min-width: 200px;
+	}
+
+	td:first-letter {
+		text-transform: uppercase;
+	}
+
+
+
+	.table_cell_title_decorator {
+		border-bottom: 1px solid #fff;
+	}
+
+	.table_cell_title_decorator:not(.table_cell_centered) {
+		height: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	.table_cell_centered {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		padding-bottom: 8px;
+	}
 
 }
-
-td:first-letter {
-    text-transform: uppercase;
-}
-
-.table_cell_centered{
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;	
-
-}
-
-
-.table_cell_title_decorator{
-	border-bottom: 1px solid #fff;
-	padding-bottom: 8px;
-}
-}
-
-
-
-
-

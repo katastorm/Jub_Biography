@@ -2,7 +2,7 @@ import { GetPreview } from './ProjectFuncs.js';
 import GetTimeline from './Timeline.js';
 import './styles/FrontPage.scss';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 
