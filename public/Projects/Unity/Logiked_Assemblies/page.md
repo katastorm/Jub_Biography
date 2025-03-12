@@ -12,7 +12,7 @@ Logiked Assemblies est un regroupement de plugins Unity, permettant d'augmenter 
 
 ## Contexte
 
-De nombreux outils ont été developpés pour le projet [LackOfLight](/Jub_Biography/projects/Unity/LackOfLight). Des outils utiles, et pas seulement pour cet unique projet. Par exemple le système de dialogues, des classes attributs C#, des fenetres de navigations entre différents fichiers du projet...
+De nombreux outils ont été developpés pour le projet [LackOfLight](/Jub_Biography/projects/Unity/LackOfLight/). Des outils utiles, et pas seulement pour cet unique projet. Par exemple le système de dialogues, des classes attributs C#, des fenetres de navigations entre différents fichiers du projet...
 
 avoir effectué de nombreux projets sur Unity, 
 
@@ -44,10 +44,4 @@ A remplir
 
 
 
-<nextprojects>
-
-> Projet précédent -  [Historycon](/Jub_Biography/projects/Unity/historyGit)
-
-> Projet suivant -  [Projet Muinecraft](/Jub_Biography/projects/Unity/Muinecraft)
-
-</nextprojects>
+<nextprojects></nextprojects>

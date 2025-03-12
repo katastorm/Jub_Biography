@@ -46,11 +46,16 @@ function GetProjectInfos_TableMode(project, oldTable = false) {
     <table className='table_compact_horizontal_big'>
     <tbody>
     <tr><th colSpan="2" className='table_cell_centered table_cell_title_decorator'>Récap Technique</th></tr>
+    <tr><td>Type de projet </td><td>{project.tab_projectType}</td></tr>
+    <tr><td>Environnement technique</td><td>{project.tags_technos.join(", ") }</td></tr>
+    <tr><td>Langages</td><td>{project.tags_languages.join(", ") }</td></tr>
+    <tr><td>Equipe</td><td>{project.membersCount > 1 ? `${project.membersCount} Membres`: "Projet solo"}</td></tr>
+    <tr><th colSpan="2" className='table_cell_centered table_cell_title_decorator'></th></tr>
+
     <tr><td>Date de création</td><td>{start_status}</td></tr>
     <tr><td>Finalisation</td><td>{end_status}</td></tr>
     <tr><td>Ampleur du projet</td><td>{project.tab_devType}</td></tr>
-    <tr><td>Type de projet </td><td>{project.tab_projectType}</td></tr>
-    <tr><td>En Ligne</td><td>{project.tab_isOnlineGame}</td></tr>          
+    <tr><td>Mis en ligne</td><td>{project.tab_isOnlineGame}</td></tr>          
     </tbody>
     </table>)
 
