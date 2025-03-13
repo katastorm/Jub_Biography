@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Jub_Biography/static/css/main.232e4e77.css",
-    "main.js": "/Jub_Biography/static/js/main.38026d4b.js",
+    "main.css": "/Jub_Biography/static/css/main.cd5d50c6.css",
+    "main.js": "/Jub_Biography/static/js/main.6b3f9885.js",
     "static/js/453.99e3864e.chunk.js": "/Jub_Biography/static/js/453.99e3864e.chunk.js",
     "static/media/Poppins-Black.ttf": "/Jub_Biography/static/media/Poppins-Black.eacee5bb9c7fee5939ae.ttf",
     "index.html": "/Jub_Biography/index.html",
-    "main.232e4e77.css.map": "/Jub_Biography/static/css/main.232e4e77.css.map",
-    "main.38026d4b.js.map": "/Jub_Biography/static/js/main.38026d4b.js.map",
+    "main.cd5d50c6.css.map": "/Jub_Biography/static/css/main.cd5d50c6.css.map",
+    "main.6b3f9885.js.map": "/Jub_Biography/static/js/main.6b3f9885.js.map",
     "453.99e3864e.chunk.js.map": "/Jub_Biography/static/js/453.99e3864e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.232e4e77.css",
-    "static/js/main.38026d4b.js"
+    "static/css/main.cd5d50c6.css",
+    "static/js/main.6b3f9885.js"
   ]
 }
