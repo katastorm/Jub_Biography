@@ -27,6 +27,7 @@ function GetProjectInfos_TableMode(project, oldTable = false) {
   let end_status = project.inDeveloppement? "En développement": `${GetMonthName(project.ending.month)} ${project.ending.year}`; 
         
   
+  const languages = project.tags_languages.length > 0 ? <tr><td>Langages</td><td>{project.tags_languages.join(", ") }</td></tr> : <></>
   const frameWorks = project.tags_technos.length > 0 ? <tr><td>Frameworks/Outils</td><td>{project.tags_technos.join(", ") }</td></tr> : <></>
   const skills = project.tags_skills.length > 0 ?   <tr><td>Compétences</td><td>{project.tags_skills.join(", ") }</td></tr> : <></>
 
@@ -52,7 +53,7 @@ function GetProjectInfos_TableMode(project, oldTable = false) {
     <tbody>
     <tr><th colSpan="2" className='table_cell_centered table_cell_title_decorator'>Récap Technique</th></tr>
     <tr><td>Type de projet </td><td>{project.tab_projectType}</td></tr>
-    <tr><td>Langages</td><td>{project.tags_languages.join(", ") }</td></tr>
+    {languages}
     <tr><td>Logiciels</td><td>{project.tags_softwares.join(", ") }</td></tr>
     {frameWorks}
     {skills}
@@ -82,6 +83,7 @@ const ProjectPopup = (project, drawPreview) => {
   
   
 
+  let technos = (project.tags_languages.length > 0 || project.tags_technos.length > 0)? <><br/><strong>Technos :</strong> {project.tags_languages.concat(project.tags_technos).join(", ")} </>: <></>
 
 
 
@@ -91,6 +93,9 @@ const ProjectPopup = (project, drawPreview) => {
     prev = (
       <img src={project.preview} alt='project preview'></img>
     );
+  }
+  else{//On ajoute un espace pour la visibilité
+    technos = <><br/>{technos}</>
   }
 
   //let dateText =  " - "  + GetMonthName(project.ending.month+1) + " " + project.ending.year
@@ -105,11 +110,12 @@ const ProjectPopup = (project, drawPreview) => {
     dateText = ""
 
   return (
-    <Popover id="popover-basic">
+    <Popover id="popover-basic" >
       <Popover.Header as="h3">{project.name}<br />{dateText}</Popover.Header>
       <Popover.Body>
         {project.description}
         {prev}
+        {technos}
         </Popover.Body>
     </Popover>
   )

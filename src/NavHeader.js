@@ -59,7 +59,10 @@ const DrawFooterNav = () => {
 
     <footer className="Body-Position">
 
-      <p>2025</p>
+
+      <p>Julien Faidide | 2025</p>
+
+      
 
 
     </footer>
