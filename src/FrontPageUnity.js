@@ -3,9 +3,7 @@ import GetTimeline from './Timeline.js';
 import './styles/FrontPage.scss';
 
 import { useState } from 'react';
-
-
-
+import { motion, AnimatePresence } from "framer-motion";
 
 
 
@@ -176,14 +174,16 @@ function FrontPage(props) {
       <h2>Timeline</h2>
 
 
-      <GetTimeline renderedProjects={renderedProjects} key={"timelineKey0"}></GetTimeline>
+      <GetTimeline renderedProjects={renderedProjects}></GetTimeline>
+
 
 
       <h2>Unity Projects</h2>
 
       <div className="BoxArea">
-
-        {renderedProjects.map(proj => <GetPreview project={proj} renderedProjects={props.renderedProjects} key={"preview" + prevId++}></GetPreview>)}
+      <AnimatePresence>
+        {renderedProjects.map(proj => <GetPreview project={proj} renderedProjects={props.renderedProjects} key={"preview" + proj.id}></GetPreview>)}
+        </AnimatePresence>
 
       </div>
 

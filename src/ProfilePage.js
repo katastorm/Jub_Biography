@@ -93,7 +93,7 @@ return (
     <h1>Julien Faidide</h1>
 
 
-    <img src='/Jub_Biography/images/julienFace.jpg' alt='julien'></img>
+    <img src='/Jub_Biography/images/julienFace.jpg' alt='julien' className='pageImg'></img>
 
 
     <h2>A propos de moi</h2>

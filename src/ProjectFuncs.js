@@ -8,6 +8,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 //import { useLocation } from "wouter";
 import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 function GetMonthName(monthNumber) {
@@ -110,9 +111,9 @@ const ProjectPopup = (project, drawPreview) => {
     dateText = ""
 
   return (
-    <Popover id="popover-basic" >
-      <Popover.Header as="h3">{project.name}<br />{dateText}</Popover.Header>
-      <Popover.Body>
+    <Popover  id="popover-basic" >
+      <Popover.Header id="popover-header">{project.name}<br />{dateText}</Popover.Header>
+      <Popover.Body id="popover-body">
         {project.description}
         {prev}
         {technos}
@@ -139,25 +140,31 @@ function GetPreview(props) {
 
   return (
 
+    <motion.div layout className='ProjectBoxLayout'
+    key={"itemFrame" +  project.id}
+    initial={{ opacity:0}}
+    animate={{  opacity:1}}
+    exit={{ opacity:0}}
+    transition={{ duration: 0.2 }}
+  >
+
     <OverlayTrigger className="link" trigger={["hover", "focus"]} placement="top" overlay={ProjectPopup(project, false)}>
+
+
       <div className="ProjectBox img-zoom-in" onClick={() =>   navigate("/Jub_Biography/projects/" + project.folderName)}>
 
+      <img src={project.preview} alt="Preview not found"/>
+      <p className='ProjectTitle'>{project.name}</p>
 
-        <img src={project.preview} alt="Preview not found" />
+      <div className="scanlines"> </div>
+      <div className="movingRefreshScanline"></div>
 
-        <p className='ProjectTitle'>{project.name}</p>
+   </div>
+    
+     </OverlayTrigger>
+     </motion.div>
 
-
-        <div className="movingRefreshScanline"></div>
-
-
-        <div className="scanlines"> </div>
-
-      </div>
-
-    </OverlayTrigger>
-
-
+  
   );
 }
 

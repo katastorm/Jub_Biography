@@ -1,3 +1,8 @@
+:root {
+  --fontSizeLittle: 1.9vh;
+  --fontSizeNormal: 2.2vh;
+  --fontSizeLarge: 2.6vh;
+}
 
 html {
   background-color: darkgray;

@@ -16,7 +16,6 @@ import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-
 
 
 
-
 ////Gere la liste des projets
 const App = () => {
 
@@ -76,14 +75,14 @@ const App = () => {
     const refreshContents = async () => {
         let contentCopy = [];
         let projectsDict2 = {};
-
+        let id = 0;
 
 
         for (let folder of folders) {
             //const content = await (await fetch(folder + '/index.md')).text();
             let pat = "/Jub_Biography/Projects/" + folder.folderName;
             let content = folder
-
+            content.id = id++;
 
 
             try {
@@ -197,8 +196,9 @@ const App = () => {
                     <header className="App-header">
                         <DrawHeaderNav />
 
-
-                        <ParralaxBackground />
+{
+                       <ParralaxBackground /> 
+}
                         <div className="background">
                             {/*
   <img src="Jub_Biography/images/lol_loop1.gif" alt="Lack of light - ingame screenshot"/>

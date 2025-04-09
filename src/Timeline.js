@@ -5,10 +5,7 @@ import './styles/Timeline.scss';
 import { ProjectPopup } from "./ProjectFuncs.js";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import { useNavigate } from "react-router-dom";
-
-
-
-
+import { motion, AnimatePresence } from "framer-motion";
 
 const GetTimeline = (props) => {
 
@@ -129,19 +126,24 @@ let pixelSizeOfAYear = `calc(100% / ${yearCount})`
 
     pointerDraw.push(
 
-<div key={"timePointTrigger" + i}>
-      <OverlayTrigger trigger={["hover", "focus"]} placement="bottom" overlay={ProjectPopup(p, p.hasPreview)} offset={[0,45]}>
+<motion.li
+            key={"timePointTrigger" +  p.id}
+            initial={{ transform : "scaleY(0.5)", opacity:0}}
+            animate={{ transform : "scaleY(1)", opacity:1}}
+            exit={{ transform : "scaleY(0.5)", opacity:0}}
+            transition={{ duration: 0.1 }}
+          >
+
+      <OverlayTrigger key={"timeTrigger" +  p.id} trigger={["hover", "focus"]} placement="bottom" overlay={ProjectPopup(p, p.hasPreview)} offset={[0,45]}>
 
         {/*Pin de la timeline*/}
-        <img src={require("./frontPage/timelinePin.gif")} alt='timline pin' className="timelinePoint"
+        <div className="timelinePoint"
           style={{
             // left:((endYear - p.creation.year)*100/yearCount)+"%"
             left: totalCssPosition,
             filter:
               `brightness(${(1 + (Math.cos(monthLocalPosition * 20000) * 0.5))})
-               hue-rotate(${Math.cos(monthLocalPosition * 999999) * 20}deg) 
-               drop-shadow(-2px 0px 0px    rgba(0, 0, 0, 1)) 
-               drop-shadow(2px 0px 0px    rgba(0, 0, 0, 1))`,
+               hue-rotate(${Math.cos(monthLocalPosition * 999999) * 20}deg)`,
 
             // bottom:Math.abs(Math.cos(monthPosition*1000))*20,
             //filter: "hue-rotate(" + monthPosition * 360 * 10 + "deg) brightness(2000%) saturate(200%)"
@@ -161,8 +163,7 @@ style = {{
 }}
 ></div>
 
-
-</div>
+</motion.li>
     );
 
 
@@ -190,8 +191,9 @@ style = {{
 
 
       <ul key="timelineObj" className="base-timeline" style={timeline__counter}>
-
+      <AnimatePresence>
         {pointerDraw}
+        </AnimatePresence>
 
         {timelineDraw}
 

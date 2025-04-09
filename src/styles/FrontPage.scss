@@ -4,6 +4,7 @@
 //@include react-md-utils;
 
 
+
 @font-face {
   font-family: "PoppinsB";
   src: url('../../fonts/Poppins/Poppins-Black.ttf')
@@ -54,6 +55,8 @@ body {
 
   padding-bottom: 5vh;
   overflow-x: hidden;
+  overflow-y: hidden;
+  /* Hide vertical scrollbar */
 }
 
 
@@ -71,24 +74,24 @@ body {
   align-items: center;
   justify-content: center;
 
- // padding-left: 2%;
- // padding-right: 2%;
+  // padding-left: 2%;
+  // padding-right: 2%;
+
 }
 
+.ProjectBoxLayout {
+  width: 20%;
+  //min-width: 60px;
+  //max-width: 230px;
 
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 5vh;
+}
 
 .ProjectBox {
   box-sizing: border-box;
-  padding: 5px;
-
-  margin-left: 2%;
-  margin-right: 2%;
-
-  margin-bottom: 4vh;
-
-  border: 2px solid #fff;
-
-
+  border: 0.1vh solid #fff;
   overflow: hidden;
   background: #fff;
 
@@ -96,32 +99,39 @@ body {
 
 
   position: relative;
-
-  width: 25%;
-  min-width: 80px;
-  max-width: 280px;
-
+  width: 100%;
   aspect-ratio: 0.75;
 
-
-
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 
-  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  //transition: all 0.3s ease;
+  padding: 5px;
 
 }
 
 
 
+/*Image titre - Texte*/
+#TitleImage {
+  margin: auto;
+  margin-top: 5vh;
+  display: block;
+  width: 60%;
+  //image-rendering: pixelated;
 
+}
 
-@media screen and (max-width: 1200px) {
+/*MEDIAS*/
+@media screen and (max-aspect-ratio: 5/4) {
 
   .Body-Position {
     width: 100%;
+  }
+  #TitleImage {
+    width: 80%;
   }
 
   .BoxArea {
@@ -129,13 +139,14 @@ body {
     padding-right: 0%;
   }
 
-  .ProjectBox {
+
+  .ProjectBoxLayout {
     margin: 8px;
     padding: 2px;
 
-    width: 40%;
-    min-width: 80px;
-    max-width: 220px;
+    width: 30%;
+    //min-width: 80px;
+    //max-width: 220px;
   }
 
 
@@ -146,16 +157,44 @@ body {
 }
 
 
+@media screen and (max-aspect-ratio: 3/4) {
+  .Body-Position {
+    width: 100%;
+  }
+  #TitleImage {
+    width: 100%;
+  }
+
+  .BoxArea {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+
+  .ProjectBoxLayout {
+    margin: 8px;
+    padding: 2px;
+
+    width: 40%;
+  }
+
+
+  table {
+    width: 100%;
+  }
+
+}
+/*END MEDIAS*/
 
 
 
 .ProjectTitle {
   // font-weight: 900;
-  -webkit-text-stroke: 0.05em #000;
+  -webkit-text-stroke: 0.15vh #000;
   font-family: PoppinsB;
   text-shadow: rgba($color: #000, $alpha: 0.7) 4px 4px 0px;
 
-  font-size: 1em;
+  font-size: var(--fontSizeLarge);
   font-weight: 700;
   position: absolute;
   user-select: none;
@@ -169,11 +208,7 @@ body {
 }
 
 
-img {
-  max-width: 100%;
-  display: block;
-  margin: auto;
-}
+
 
 .ProjectBox img {
   object-fit: cover;
@@ -187,15 +222,26 @@ img {
 
 .img-zoom-in img,
 .img-zoom-in .ProjectTitle {
-  transition: all .2s ease-in-out;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -ms-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
+
+  transition:
+    transform .2s ease-in-out,
+    filter .2s ease-in-out;
+  -webkit-transition:
+    transform .2s ease-in-out,
+    filter .2s ease-in-out;
+  -moz-transition:
+    transform .2s ease-in-out,
+    filter .2s ease-in-out;
+  -ms-transition:
+    transform .2s ease-in-out,
+    filter .2s ease-in-out;
+  -o-transition:
+    transform .2s ease-in-out,
+    filter .2s ease-in-out;
+
 }
 
 .img-zoom-in img {
-  //filter: grayscale(100%);
   filter: sepia(100%) saturate(500%) brightness(70%) hue-rotate(45deg);
 }
 
@@ -226,12 +272,6 @@ img {
 
 
 
-
-
-
-
-
-
 .scanlines {
   overflow: hidden;
 }
@@ -241,14 +281,15 @@ img {
 .scanlines::before {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 150%;
-  margin-top: -30px;
-  top: 0;
-  left: 0;
-  opacity: 30%;
 
-  transition: opacity 0.3s linear;
+  width: calc(100% - 10px);
+  left: 5px;
+
+  height: 150%;
+  top: 0;
+
+  margin-top: -30px;
+  opacity: 30%;
 
 
   /*
@@ -261,59 +302,69 @@ img {
 
   background-image: url("../../public/transparent_gradient.png");
 
-  animation: fudge 3s linear infinite;
 }
 
 
-@keyframes fudge {
-  from {
-    transform: translate(0px, 0px);
+@supports selector(::-webkit-scrollbar) {
+
+  /* Ce bloc s'applique à Chrome, Edge, Safari... mais pas à Firefox */
+  //Firefox épouvantable lags
+  .scanlines::before {
+    animation: fudge 3s linear infinite;
+    transition: opacity 0.3s linear;
   }
 
-  to {
-    transform: translate(0px, -30px);
+
+
+  @keyframes fudge {
+    from {
+      transform: translate(0px, 0px);
+    }
+
+    to {
+      transform: translate(0px, -30px);
+    }
   }
+
+
+
+
+  @keyframes refreshScan {
+    0% {
+      transform: translateY(-1000px);
+    }
+
+    100% {
+      transform: translateY(100px);
+    }
+  }
+
+
+  .movingRefreshScanline {
+    float: left;
+    width: 200%;
+    height: 100px;
+    z-index: 8;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0, rgba(255, 255, 255, .4) 10%, rgba(0, 0, 0, .0) 100%);
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0%;
+    transition: opacity 0.3s linear;
+
+
+
+    animation: refreshScan 7s linear infinite;
+    animation-name: refreshScan;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+  }
+
 }
-
-
-
-
-@keyframes refreshScan {
-  0% {
-    transform: translateY(-1000px);
-  }
-
-  100% {
-    transform: translateY(100px);
-  }
-}
-
-
-.movingRefreshScanline {
-  float: left;
-  width: 200%;
-  height: 100px;
-  z-index: 8;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0, rgba(255, 255, 255, .4) 10%, rgba(0, 0, 0, .0) 100%);
-  opacity: 0.5;
-  position: absolute;
-  bottom: 0%;
-  transition: opacity 0.3s linear;
-
-
-
-  animation: refreshScan 7s linear infinite;
-  animation-name: refreshScan;
-  animation-duration: 7s;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  animation-play-state: running;
-
-}
-
 
 
 
@@ -321,22 +372,22 @@ h1 {
   margin-top: 5vh;
   margin-bottom: 1vh;
   text-align: center;
-  font-size: 2em;
+  font-size: 5vh;
   font-weight: bold;
 }
 
 h2 {
   margin-top: 2vh;
   margin-bottom: 1vh;
-  font-size: 1.1em;
+  font-size: 3.5vh;
   //font-weight: bold;
   color: #8596e0;
 }
 
 h3 {
   //margin-top: 2vh;
-  margin-bottom: 1vh;
-  font-size: .8em;
+  margin-bottom: 2.6vh;
+  font-size: var(--fontSizeLarge);
 
 }
 
@@ -350,13 +401,13 @@ p,
 span,
 li,
 form {
-  font-size: large;
+  font-size: var(--fontSizeNormal);
   font-weight: 50;
   text-justify: inter-word;
   text-align: justify;
 }
 
-a{
+a {
   transition: color 0.1s ease;
 }
 
@@ -366,9 +417,10 @@ a:active {
 }
 
 a:visited {
-  color: #8e1dcffd; 
+  color: #8e1dcffd;
   transition: color 0.1s ease;
 }
+
 a:hover {
   color: #8acaff;
   transition: color 0.1s ease;
@@ -376,97 +428,134 @@ a:hover {
 
 
 
-.ReactMarkdown li{  
-  margin-left: 20px !important;
-}
-
-.ReactMarkdown span, .ReactMarkdown .code{  
-line-height: 1.6em;
-display: block;
-margin-top: 8px;
-margin-bottom: 12px;
-}
 
 
-
-
-
-
-#TitleImage{
-  margin: auto;
-  margin-top: 5vh;
-  display: block;
-  width: 60%;
-//image-rendering: pixelated;
-
-}
-
-.ReactMarkdown{
-  overflow: hidden;
-}
-
-
-.ReactMarkdown img:not(#TitleImage), 
+.pageImg,
+.ReactMarkdown img:not(#TitleImage),
 .ReactMarkdown video,
 .ReactMarkdown iframe {
-  margin: auto;
-  margin-bottom: 4vh;
-  margin-top: 4vh;
-  display: block;
-  max-height: 60vh;
-  max-width: 100%;
+    margin: auto;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+    display: block;
 
-  border-radius: 5px;
-  box-shadow: 5px 5px 20px 2px rgba($color: #000, $alpha: .5);
+
+    object-fit: contain;
+
+    @media screen and (min-aspect-ratio: 1/1) {
+      height: 60vh;
+      max-width: 100%;
+    }
+    @media screen and (max-aspect-ratio: 1/1) {
+      width: 100%;
+      height: auto;
+    }
+
+
+
+    border-radius: .5vh;
+    box-shadow: 5px 5px 20px 2px rgba($color: #000, $alpha: .5);
+  }
+
+
+.ReactMarkdown {
+  /*REACT MARKDOWN*/
+
+  overflow: hidden;
+
+  li {
+    margin-left: 4vh !important;
+  }
+
+  span,
+  .code {
+    line-height: 1.6em;
+    display: block;
+    margin-top: 1vh;
+    margin-bottom: 1.5vh;
+  }
+
+
+
+
+
+  
+
+
+  /*Pour les caption en dessous des images et des .imagegroup; utiliser *caption* juste aprés l'image ou la video*/
+  img+em,
+  iframe+em,
+  video+em,
+
+  *:has(> .imagegroup)+em,
+  //Tous les EM qui suivent les imageGroup
+  *:has(> .imagegroup)+span>em {
+    display: block !important;
+
+    text-align: center;
+    color: #fff;
+    opacity: 0.6;
+    transform: translateY(-3vh);
+    height: 1.7vh;
+
+  }
+
+
+  /*Fonctionne tant qu'il y a la place*/
+  @media screen and (min-width: 800px) {
+
+    *:has(> .imagegroup) {
+      //Tous les parents des imageGroup
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px
+    }
+
+    *:has(> .imagegroup) img {
+      //Tous les images à coté des imageGroup
+      display: flex;
+      max-width: 50% !important;
+      max-height: 40vh;
+      width: auto;
+    }
+
+  }
 }
+/*END REACT MARKDOWN*/
 
 
-/*Pour les caption en dessous des images et des .imagegroup; utiliser *caption* juste aprés l'image ou la video*/
-.ReactMarkdown img+em,
-.ReactMarkdown iframe+em,
-.ReactMarkdown video+em,
-
-.ReactMarkdown *:has(> .imagegroup)+em,//Tous les EM qui suivent les imageGroup
-.ReactMarkdown *:has(> .imagegroup)+span>em{
-display: block !important;
-
-  text-align: center;
-  color: #fff;
-  opacity: 0.6;
-  transform: translateY(-3vh);
-  height: 10px;
-
-}
 
 
-/*Fonctionne tant qu'il y a la place*/
-@media screen and (min-width: 800px) {
 
-.ReactMarkdown *:has(> .imagegroup){ //Tous les parents des imageGroup
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px
-}
+/*POPPOVER*/
 
-.ReactMarkdown *:has(> .imagegroup) img {  //Tous les images à coté des imageGroup
-  display: flex;
-  max-width: 50% !important;
-  max-height: 40vh;
-  width: auto;
-}
+#popover-basic {
+  
+  width: 40vh;
+  max-width: 40vh;
+  font-size: var(--fontSizeLittle);
 
-}
-
-
-#popover-basic img {
+  img {
   max-width: 90%;
-  margin-top: 1vh;
-  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, .3);
+    max-height: 40vh;
+    margin-top: 1vh;
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, .3);
+  }
+
+  #popover-header {
+    font-size: var(--fontSizeNormal);
+
+  }
+
+#popover-body {
+    font-size: var(--fontSizeLittle);
 }
 
 
 
+}
+/*END POPPOVER*/
 
 
 
@@ -478,8 +567,8 @@ display: block !important;
 .switch {
   position: relative;
   display: inline-block;
-  width: 54px;
-  height: 28px;
+  width: 6vh;
+  height: 3vh;
 }
 
 /* Hide default HTML checkbox */
@@ -505,10 +594,10 @@ display: block !important;
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px;
-  width: 20px;
-  left: 4px;
-  bottom: 4px;
+  height: 2.3vh;
+  width: 2.3vh;
+  left: 0.5vh;
+  bottom: 0.4vh;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -523,14 +612,14 @@ input:focus+.slider {
 }
 
 input:checked+.slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(2.7vh);
+  -ms-transform: translateX(2.7vh);
+  transform: translateX(2.7vh);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 28px;
+  border-radius: 5vh;
 }
 
 .slider.round:before {
