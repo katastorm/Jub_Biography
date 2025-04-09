@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/Jub_Biography/static/css/main.cd5d50c6.css",
-    "main.js": "/Jub_Biography/static/js/main.6b3f9885.js",
+    "main.css": "/Jub_Biography/static/css/main.833fc3a2.css",
+    "main.js": "/Jub_Biography/static/js/main.9f8c0ca1.js",
     "static/js/453.99e3864e.chunk.js": "/Jub_Biography/static/js/453.99e3864e.chunk.js",
     "static/media/Poppins-Black.ttf": "/Jub_Biography/static/media/Poppins-Black.eacee5bb9c7fee5939ae.ttf",
+    "static/media/timelineOffPin.png": "/Jub_Biography/static/media/timelineOffPin.6a1717637398dc1e0695.png",
+    "static/media/timelineOnPin.png": "/Jub_Biography/static/media/timelineOnPin.70cf633ee7285f77ef64.png",
     "index.html": "/Jub_Biography/index.html",
-    "main.cd5d50c6.css.map": "/Jub_Biography/static/css/main.cd5d50c6.css.map",
-    "main.6b3f9885.js.map": "/Jub_Biography/static/js/main.6b3f9885.js.map",
+    "main.833fc3a2.css.map": "/Jub_Biography/static/css/main.833fc3a2.css.map",
+    "main.9f8c0ca1.js.map": "/Jub_Biography/static/js/main.9f8c0ca1.js.map",
     "453.99e3864e.chunk.js.map": "/Jub_Biography/static/js/453.99e3864e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd5d50c6.css",
-    "static/js/main.6b3f9885.js"
+    "static/css/main.833fc3a2.css",
+    "static/js/main.9f8c0ca1.js"
   ]
 }
