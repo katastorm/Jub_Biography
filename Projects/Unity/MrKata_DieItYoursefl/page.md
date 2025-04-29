@@ -23,7 +23,7 @@ Le dévloppement a été trés étendu, sur plusieurs années mais de manières 
 - Système de sang sur les murs, design
 - Système de niveaux
 
-Et des années aprés avoir laisser le projet à l'abandon j'y suis retourné pour implémenter quelques autres features
+Et des années aprés avoir laissé le projet à l'abandon j'y suis retourné pour implémenter quelques autres features
 - Un musique faite par mes soins
 - Système de lumière et ombrages dynamiques
 - Rework graphique et du player controlleur
