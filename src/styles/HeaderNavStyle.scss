@@ -37,8 +37,8 @@ footer{
 .logo{
   text-align: center;
 
- font-size: var(--fontSizeNormal); 
- display: flex;
+  font-size: var(--fontSizeNormal); 
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #2196F3;
@@ -75,7 +75,9 @@ footer{
   
 }
 .nav-links li a:hover {
-  color: #61DAFB;
+  //color: #61DAFB;
+  color: var(--textColor1);
+
 }
 .nav-links li {
   position: relative;
@@ -85,7 +87,8 @@ footer{
   display: block;
   height: 0.5vh;
   width: 0%;
-  background-color: #2196F3;
+  background-color: var(--textColor1);
+  
   position: absolute;
   transition: all ease-in-out 250ms;
   margin: 0 0 0 10%;

@@ -1,8 +1,8 @@
 
-import './styles/Timeline.scss';
+import './Timeline.scss';
 //import React, { useState } from 'react'
 
-import { ProjectPopup } from "./ProjectFuncs.js";
+import { ProjectPopup } from "../Projects/ProjectFuncs.js";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";

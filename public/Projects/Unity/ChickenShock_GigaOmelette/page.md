@@ -5,51 +5,37 @@
 
 ## Description
 
-Jeu de tir multijoueur en 2D, avec un rythme trés rapide. Développé en collaboration avec [Maxime BARON](https://www.linkedin.com/in/maxime-baron-3306881a3/) en tant que graphiste.
+Jeu de tir multijoueur en 2D, avec un rythme très rapide. Développé en collaboration avec un graphiste.
 
-Jeu publié : [Chicken Shock Giga Omelette by Logiked](https://logiked.itch.io/chicken-shock-giga-omelette)
+Jeu publié : [Chicken Shock Giga Omelette by LOGIKED](https://LOGIKED.itch.io/chicken-shock-giga-omelette)
 
 
 <autotab></autotab>
 
-## Contexte
 
-En première au lycée, 16 ans. L'objectif était de créer un jeu simple, rapide, amusant, mais surtout en multijoueur. Le design avait pour but d'être en 2D, varié dans ses éléments graphiques, ses armes et les skins des joueurs.
 ![Présentation des armes](./medias/img1.jpg)
 
-## Développement
-
-Le développement fût relativement sans accrocs, sachant que le package Unity2D et les *tile maps* n'existait pas encore à l'époque. Le système de création de map a été developpé sans tutoriels, en se basant uniquement sur la documentation Unity et mes connaissances de l'époque. C'est pourquoi, ca fonctionne bien, mais c'est plutot trés mal codé. N'ayant pas de connaissances préalables sur la *serialization*, la plupart des types de données du jeu sont sérialisés à la main, lignes par lignes, dans mon propre language (Mon dieu et dire que tout ça aurait pu être en Json..). Ca m'a bien servi de leçon. Des années aprés, j'ai apris à chercher sur internet et faire de la veille des solutions existantes.
-
-Un moment j'ai pu me faire une petite initiation aux bases de données avec du SQL. Je voulait faire une page d'acceuil sur le menu principal du jeu avec des informations d'actualités.
 
 ## Produit final
 
-- 3 modes de jeu jouables dans lesquels les joueurs peuvent jouer en équipe ou en FFA. 
+- 3 modes de jeu en équipe ou en FFA. 
 
-- 33 armes différentes, aux fonctionnalités multiples telle que armes à feu, lance-flammes, et d'autres plus loufoques.
+- 33 armes différentes, aux fonctionnalités multiples telles que armes à feu, lance-flammes, et d'autres plus loufoques.
 
 - Un éditeur de niveaux pour jouer sur ses cartes personnelles, en multijoueur.
 
-- Le jeu est fonctionnel et en ligne, avec une édition achetable qui permet l'accès à l'intégralité des armes et des chapeaux sans passer par des heures de jeux.
+- Le jeu en ligne avec une édition achetable qui permet l'accès à l'intégralité des armes et des chapeaux sans passer par des heures de jeux.
 
 ![Menu Principal](./medias/capt1.jpg)
 
 
-## Ressenti
-
-Très content du résultat, avec ses designs créatifs et un gameplay très accessible !
-
-Beaucoup d'apprentissage durant le développement, qui donnait envie de retravailler le code dans un objectif d'optimisation, mais le jeu reste totalement fonctionnel en l'état.
 
 
-
-
-## Mode Histoire
 
 
 
 <history>
+
 
 *[Infos en vrac]*
 En collocation avec mon ami graphiste et artiste doué [Maxime BARON](https://www.linkedin.com/in/maxime-baron-3306881a3/), et ayant déjà collaboré sur de nombreux projets, nous avons eu l'idée de développer un jeu en 2D un peu ridicule mais fluide, rapide et amusant, qui nous permettrait de jouer avec notre groupe d'amis et qui s'adresserait à tous les jeunes de notre âge.
@@ -81,7 +67,7 @@ Quelques autres fonctionnalités :
 
 
 
-L'évolution du jeu a été plutôt longue, car réalisé en parallèle de plusieurs petits projets. Je repassais régulièrement pour des fixs, des ajout d'armes ou des perfectionnement de maps. Au bout de quelques années, le jeu a été publié sur [itch.io](https://logiked.itch.io/chicken-shock-giga-omelette).
+L'évolution du jeu a été plutôt longue, car réalisé en parallèle de plusieurs petits projets. Je repassais régulièrement pour des fixs, des ajout d'armes ou des perfectionnement de maps. Au bout de quelques années, le jeu a été publié sur [itch.io](https://LOGIKED.itch.io/chicken-shock-giga-omelette).
 
 
 

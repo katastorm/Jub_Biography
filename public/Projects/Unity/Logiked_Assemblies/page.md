@@ -7,7 +7,7 @@
 
 ## Description
 
-Logiked Assemblies est un regroupement de plugins Unity, permettant d'augmenter la productivité et les capacités du logiciel lors du développement d'un projet.
+LOGIKED Assemblies est un regroupement de plugins Unity, permettant d'augmenter la productivité et les capacités du logiciel lors du développement d'un projet.
 
 
 ## Contexte

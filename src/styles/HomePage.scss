@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--textWhite);
 }
 
 
@@ -48,17 +48,16 @@ body {
   justify-content: left;
 
 
-  background-color: #181820;
+  background-color: var(--body-color);
 
   //min-height: 100vh; espace pour le footer & header
-  min-height: 85vh;
+  min-height: 90vh;
 
   padding-bottom: 5vh;
   overflow-x: hidden;
   overflow-y: hidden;
   /* Hide vertical scrollbar */
 }
-
 
 
 
@@ -157,10 +156,15 @@ body {
 }
 
 
-@media screen and (max-aspect-ratio: 3/4) {
+@media screen and (max-aspect-ratio: 4/5) {
   .Body-Position {
     width: 100%;
   }
+
+  .OnlyLandscapeRatio{
+    display: none;
+  }
+
   #TitleImage {
     width: 100%;
   }
@@ -369,23 +373,32 @@ body {
 
 
 h1 {
+
   margin-top: 5vh;
   margin-bottom: 1vh;
   text-align: center;
-  font-size: 5vh;
-  font-weight: bold;
+  font-size: var(--fontSizeTitle1);
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  letter-spacing: .25vh;
+  word-spacing: 1vh;
+
+  text-shadow: #000 .6vh .6vh 0vh;
+  
 }
 
 h2 {
   margin-top: 2vh;
   margin-bottom: 1vh;
-  font-size: 3.5vh;
   //font-weight: bold;
-  color: #8596e0;
+  color: var(--textColor1);
+  font-size: var(--fontSizeLarger);
 }
 
 h3 {
   //margin-top: 2vh;
+  font-weight: bold;
   margin-bottom: 2.6vh;
   font-size: var(--fontSizeLarge);
 
@@ -393,7 +406,7 @@ h3 {
 
 //Pour les zones entourés de **
 em {
-  color: #8596e0;
+  color: var(--textColor1);
 }
 
 
@@ -408,16 +421,17 @@ form {
 }
 
 a {
+  font-size: var(--fontSizeNormal);
+  color: var(--textColor1);
   transition: color 0.1s ease;
 }
 
 a:active {
-  color: #2196F3;
   transition: color 0.1s ease;
 }
 
 a:visited {
-  color: #8e1dcffd;
+  color: #c86afffd;
   transition: color 0.1s ease;
 }
 
@@ -527,6 +541,16 @@ a:hover {
 
 
 
+.BubbleSpan{
+
+  background-color: var( --grey1);
+  border-radius: 1.5vh;
+  padding-left: 1vh;  
+  padding-right: 1vh;  
+font-size: var(--fontSizeMedium);
+}
+
+
 
 /*POPPOVER*/
 
@@ -597,7 +621,7 @@ a:hover {
   height: 2.3vh;
   width: 2.3vh;
   left: 0.5vh;
-  bottom: 0.4vh;
+  bottom: 0.35vh;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;

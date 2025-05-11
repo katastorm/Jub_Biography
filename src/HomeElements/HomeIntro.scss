@@ -1,0 +1,264 @@
+
+:root{
+
+--start-anim-time: 1.1s;
+
+}
+
+
+@keyframes homeIntroAreaGradientAnim {
+    0% {
+       opacity: 0;
+    }
+
+    100% {
+       opacity: 1;
+    }
+}
+
+@keyframes SetVisible {
+    0% {
+       visibility: visible;
+    }
+    100% {
+        visibility: visible;
+     }
+ 
+}
+
+
+@keyframes homeIntroBar {
+    0% {
+        visibility: visible;
+        width: 0%;
+        height: 0.2vh;
+    }
+
+    10% {
+        width: 0%;
+    }
+
+    60% {
+        width: 100%;
+        height: 0%;
+    }
+
+    100% {
+        visibility: hidden;
+        height: 100%;
+    }
+
+}
+
+
+.start.homeIntroAreaGradient{
+    opacity: 0;
+    animation: 1.2s homeIntroAreaGradientAnim forwards ease-out;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+}
+
+
+.homeIntroAreaGradient{
+    z-index: 10;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    visibility: visible;
+
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    
+
+    @media screen and (min-aspect-ratio: 1/1) {
+    background: linear-gradient(90deg,
+    rgba(34, 42, 49, 0) 0%,
+    var( --grey4) 30%,
+    var( --grey4) 70%,
+    rgba(34, 42, 49, 0) 100%);
+}
+
+}
+
+
+.start.homeIntroAreaBar{
+    animation: homeIntroBar forwards ease-out;
+    animation-duration:  var(--start-anim-time);
+    animation-iteration-count: 1;
+}
+
+.homeIntroAreaBar {
+
+
+
+    visibility: hidden;
+    position: absolute;
+
+    display: block;
+
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+
+    width: 100%;
+    height: 100%;
+
+    border-width: 0.1vh;
+    border-top-style: solid;
+    border-bottom-style: solid;
+
+}
+
+
+.homeIntroArea {
+    
+
+    *{
+        z-index: 5;
+    }
+    visibility: hidden;
+    animation: .01s SetVisible forwards ease-out;
+    animation-delay: var(--start-anim-time);
+    animation-iteration-count: 1;
+
+
+
+    //Display
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7vh;
+
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+
+    //Margins
+
+    margin-bottom: 5vh;
+    margin-top: 3vh;
+
+
+    //background-color: rgba(255, 255, 255, 0.159);
+
+
+
+    border-width: 0.1vh;
+    border-top-style: solid;
+    border-bottom-style: solid;
+
+
+
+    @media screen and (max-aspect-ratio: 1/1) {
+        background: none;
+        flex-direction: column-reverse;
+        gap: 3vh;
+        padding-top: 2vh;
+        padding-bottom: 0vh;
+        border-style: none;
+        width: 100%;
+        // background : rgba(255,255,255,0.2);       
+        // border-radius: 2vh;
+    }
+}
+
+
+
+@keyframes elemenPopup1 {
+    0% {
+        opacity: 0;
+        transform: translateX(-20vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0vh);
+    }
+}
+
+.start.homeIntroText{
+    opacity: 0;
+    animation: 1s elemenPopup1 forwards ease-out;
+    animation-delay: var(--start-anim-time) ;
+    animation-iteration-count: 1;
+}
+
+.homeIntroText {
+
+    max-width: 85vh;
+    height: 100%;
+    padding-left: 2vh;
+    padding-right: 2vh;
+
+    * {
+        text-justify: none;
+    }
+
+    @media screen and (max-aspect-ratio: 1/1) {
+        max-width: 100%;
+        width: 100%;
+
+        border-color: white;
+        border-width: 0.1vh;
+        border-left-style: solid;
+
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+
+        background: linear-gradient(90deg,
+                rgba(192, 192, 255, 0.2) 0%,
+                rgba(192, 192, 255, .2) 50%,
+                rgba(192, 192, 255, 0) 100%);
+
+        * {
+            padding-left: 2vh;
+            padding-right: 2vh;
+        }
+    }
+
+}
+
+
+@keyframes elemenPopup2 {
+
+    0% {
+        visibility: visible;
+        opacity: 0;
+        transform: translateX(10vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0vh);
+        visibility: visible;
+    }
+}
+
+
+
+.start.homeIntroImg{
+    opacity: 0;
+    visibility: hidden;
+    animation: 1s elemenPopup2 forwards ease-out;
+    animation-delay: var(--start-anim-time);
+    animation-iteration-count: 1;
+
+
+}
+
+.homeIntroImg {
+
+
+
+    height: 23vh;
+    max-width: 45%;
+
+    border-radius: 3vh;
+}

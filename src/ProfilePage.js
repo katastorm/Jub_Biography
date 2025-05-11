@@ -1,5 +1,5 @@
 
-import './styles/FrontPage.scss';
+import './styles/HomePage.scss';
 
 
 
@@ -20,7 +20,7 @@ function ProfilePage(props) {
   }
 
   const exp2 = {
-    post: "DEVELOPPEUR MR/XR UNITY (alternance)",
+    post: "DEVELOPPEUR MR/XR (alternance)",
     place: "R&D EDF LAB – SACLAY",
     date: "2020-2023",
     desc: "Conception de prototypes innovants pour les opérateurs de centrales nucléaires",
@@ -30,7 +30,7 @@ function ProfilePage(props) {
   }
 
   const exp3 = {
-    post: "DEVELOPPEUR UNITY AR (alternance) ",
+    post: "DEVELOPPEUR AR (alternance) ",
     place: "MAREBIZ – CHAMPS SUR MARNE",
     date: "2019-2020",
     desc: "Participation à une solution AR/VR d’aide à la vente de produits volumineux",
@@ -98,7 +98,7 @@ return (
 
     <h2>A propos de moi</h2>
 
-    <p>Passionné d'informatique depuis mes 10 ans, j'ai acquis de grandes connaissances aux travers de mes études, mes projets persos et mes expériences professionelles. J'adore la nature, les vidéos en stop motion, la cueillette des champignons. 
+    <p>Passionné d'informatique depuis mes 10 ans, j'ai acquis de grandes connaissances aux travers de mes études, mes projets persos et mes expériences professionnelles. J'adore la nature, les vidéos en stop motion, la cueillette des champignons. 
     </p>
 
 

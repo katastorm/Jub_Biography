@@ -30,7 +30,7 @@ Le jeu fonctionne correctement. Le deathrun, est truffé de références personn
 
 Mon objectif principal dans le jeu était que l'ont puisse voir ce que tiens le joueur d'en face dans ses mains. Ca peut paraître bête mais c'était pas si évident à l'époque. Avoir un Player Controller qui fonctionnait aussi bien n'était pas non plus facile.
 
-Je reste plutôt déçu du résultat, puisque j'ai passé le plus clair de mon temps à développer la fonctionnalité de Deathrun dont le résultat me satisfaisait pleinement. Je n'ai donc pas passé de temps significatifs sur la correction de bug, faire de la veille et regarder des tutos... Trop occupé à implémenter idée après idée de pièges et de références persos à mon groupe de potes ! Il y a aussi un mode d'édition de niveaux qui à vu le jour, mais la feature n'est pas trés élaborée et ne fonctionne pas en tant que tel.
+Je reste plutôt déçu du résultat, puisque j'ai passé le plus clair de mon temps à développer la fonctionnalité de Deathrun dont le résultat me satisfaisait pleinement. Je n'ai donc pas passé de temps significatifs sur la correction de bug, faire de la veille et regarder des tutos... Trop occupé à implémenter idée après idée de pièges et de références persos à mon groupe de potes ! Il y a aussi un mode d'édition de niveaux qui à vu le jour, mais la feature n'est pas très élaborée et ne fonctionne pas en tant que tel.
 
 
 Ainsi bien que je sois resté sur ma faim à l'encontre de mes objectifs initiaux. J'ai vraiment apprécié les nouveau éléments gameplay et le jeu en lui même qui est encore très jouable et amusant à ce jour !

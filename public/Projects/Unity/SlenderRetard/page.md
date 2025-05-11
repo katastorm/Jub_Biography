@@ -20,7 +20,7 @@ Le but du projet était de créer un Slender, où le Slenderman était un de nos
 
 ## Produit final
 
-Le jeu est terminé, et marche extrémement bien ! Il y a quasi 0 retour de bugs. L'immersion est parfaite et la jouabilité est trés bonne. Il y a environ 20-30 minutes de gameplay facilement.
+Le jeu est terminé, et marche extrémement bien ! Il y a quasi 0 retour de bugs. L'immersion est parfaite et la jouabilité est très bonne. Il y a environ 20-30 minutes de gameplay facilement.
 
 ![](./medias/img2.jpg)
 

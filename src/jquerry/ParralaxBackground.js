@@ -18,6 +18,7 @@ function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  
   /*
   function toggleZoomScreen() {
 	document.body.style.zoom = (1 / window.devicePixelRatio);

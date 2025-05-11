@@ -1,7 +1,7 @@
 
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/HeaderNavStyle.scss';
+import '../styles/HeaderNavStyle.scss';
 import { useNavigate } from "react-router-dom";
 
 
@@ -22,15 +22,17 @@ const DrawHeaderNav = () => {
 
     
     <nav className="Body-Position">
+      {/*
       <div className="logo">
         <a href={() => false}> Jub Portfolio </a >
       </div>
-
+*/}
 
 
       <ul className="nav-links">
-        <li><a href={() => false} onClick={() => handleClick("/Jub_Biography/profile")}>Profil</a></li>
-        <li><a href={() => false}  onClick={() => handleClick("/Jub_Biography/home")}>Projets Unity</a></li>
+        <li><a href={() => false} onClick={() => handleClick("/Jub_Biography/home")}>Portfolio</a></li>
+        <li><a href={() => false} onClick={() => handleClick("/Jub_Biography/Profile")}>Profil</a></li>
+      {/*  <li><a href={() => false} onClick={() => handleClick("/Jub_Biography/Projects/Unity")}>Projets Unity</a></li>*/}
       </ul>
 
       <ul className="nav-logos">

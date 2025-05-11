@@ -1,18 +1,18 @@
 import { GetPreview } from './ProjectFuncs.js';
-import GetTimeline from './Timeline.js';
-import './styles/FrontPage.scss';
-
-import { useState } from 'react';
+import GetTimeline from '../Elements/Timeline.js';
+import '../styles/HomePage.scss';
 import { motion, AnimatePresence } from "framer-motion";
 
 
+import { useState } from 'react';
 
-function FrontPage(props) {
+
+
+function UnityProjectsPage(props) {
 
   const [filters, setfilters] = useState([false, false])
+  
   let renderedProjects = props.projects
-
-  console.log("START")
 
 
 
@@ -170,11 +170,12 @@ function FrontPage(props) {
       </form>
 
 
-
+      
+      <div className='OnlyLandscapeRatio'>
       <h2>Timeline</h2>
 
-
       <GetTimeline renderedProjects={renderedProjects}></GetTimeline>
+      </div>
 
 
 
@@ -193,5 +194,5 @@ function FrontPage(props) {
   );
 }
 
-export default FrontPage;
+export default UnityProjectsPage;
 

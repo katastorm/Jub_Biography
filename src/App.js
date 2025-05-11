@@ -1,10 +1,13 @@
 
 
-import FrontPage from "./FrontPageUnity";
-import ProjectPage from "./ProjectPage";
+import HomePage from "./HomePage.js";
+import {ProjectPage} from "./Projects/MarkdownProjectPage.tsx";
 import ProfilePage from "./ProfilePage";
+import UnityProjectsPage from "./Projects/UnityProjectsPage.js";
+
+
 //import PageNotFound from "./404";
-import { DrawHeaderNav, DrawFooterNav } from './NavHeader.js';
+import { DrawHeaderNav, DrawFooterNav } from './Elements/NavHeader.js';
 import { useState, useEffect } from 'react';
 import folders from "./projectList.json"
 //import { prettyFormat } from "@testing-library/react";
@@ -49,26 +52,6 @@ const App = () => {
 
 
 
-    const fetchImage = async (url, defUrl) => {
-        let img = undefined
-
-        let imageBlob = undefined
-
-        img = await fetch(url);
-
-        imageBlob = await img.blob();
-
-
-        // console.log(imageBlob.type)
-
-        if (imageBlob === undefined || !imageBlob.type.includes("image")) {
-            return defUrl;
-        }
-
-        return await URL.createObjectURL(imageBlob);
-    };
-
-
 
     ///Gestion de la liste des projets
 
@@ -80,9 +63,13 @@ const App = () => {
 
         for (let folder of folders) {
             //const content = await (await fetch(folder + '/index.md')).text();
-            let pat = "/Jub_Biography/Projects/" + folder.folderName;
+
             let content = folder
+
             content.id = id++;
+
+            let pat = "/Jub_Biography/Projects/" + content.folderName;
+            content.folderPath = pat;
 
 
             try {
@@ -112,7 +99,6 @@ const App = () => {
                     content.preview = "/Jub_Biography/preview_unkown.jpg"
 
                 //content.folderName = encodeURIComponent(folder.folderName);
-                content.folderPath = pat;
                 content.mainMarkdownPath = content.hasMdFile ? content.folderPath + 'page.md' : "/Jub_Biography/ProjectWIP.md";
 
 
@@ -146,24 +132,16 @@ const App = () => {
 
     function LoadProject() {
 
-        const allPaths = useParams()["*"];
+        const toCut = "/Jub_Biography/projects/"
+        const projectRelativePath = window.location.pathname.substring(toCut.length)//useParams()["*"];
 
-        let modified = allPaths
-
-        if (modified.length > 0 && modified[modified.length - 1] !== "/")
-            modified += "/";
-
-
-        if (allPaths !== modified)
-            return <Navigate to={"/Jub_Biography/projects/" + modified} replace/>
-        else
             return (
-                <ProjectPage project={state.projectsDict[modified]} />
+                <ProjectPage project={state.projectsDict[projectRelativePath]} />
             );
     }
 
     function ShowHome() {
-        return <FrontPage projects={state.projects} />
+        return <HomePage projects={state.projects} />
     }
 
 
@@ -196,20 +174,14 @@ const App = () => {
                     <header className="App-header">
                         <DrawHeaderNav />
 
-{
-                       <ParralaxBackground /> 
-}
+                        {
+                            <ParralaxBackground />
+                        }
                         <div className="background">
-                            {/*
-  <img src="Jub_Biography/images/lol_loop1.gif" alt="Lack of light - ingame screenshot"/>
-  <img src="Jub_Biography/images/lol_loop2.gif" alt="Lack of light - ingame screenshot"/>
-  <img src="Jub_Biography/images/lol_loop2.gif" alt="Lack of light - ingame screenshot"/>
-*/}
 
                             <img src="/Jub_Biography/images/backgroundTest2.jpg" alt="backgroundImg" />
                             <img src="/Jub_Biography/images/backgroundTest2.jpg" alt="backgroundImg" />
                             <img src="/Jub_Biography/images/backgroundTest2.jpg" alt="backgroundImg" />
-
 
                         </div>
 
@@ -218,27 +190,24 @@ const App = () => {
 
                         <div className="Body Body-Position">
 
-
-
                             <Routes>
-
-
-
+                            
                                 <Route exact path="/Jub_Biography">
 
                                     <Route path={"home"} element={<ShowHome />} />
 
                                     <Route path={"profile"} element={<ProfilePage />} />
 
-                                    <Route path={"projects"}>
-                                        <Route path={"*"} element={<LoadProject />} />
+                                    <Route exact path={"Projects"}>
+                                        <Route exact path={"Unity"}>
+                                            <Route path={"*"} element={<LoadProject />} />
+                                            <Route path={""} element={<UnityProjectsPage projects={state.projects} />} />
+                                        </Route>
                                         <Route path={""} element={<Navigate to="/Jub_Biography/home" replace />} />
                                     </Route>
 
                                     <Route path={"*"} element={<Navigate to="/Jub_Biography/home" replace />} />
-                                    <Route path={""} element={<ShowHome />} />
-
-
+                                    <Route path="" element={<Navigate to="/Jub_Biography/home" replace />} /> {/* navigate to default route if no url matched */}
                                 </Route>
 
                                 <Route path="/*" element={<Navigate to="/Jub_Biography/home" replace />} /> {/* navigate to default route if no url matched */}

@@ -6,20 +6,21 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 //import ReactDom from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/FrontPage.scss';
-import './styles/FunkyTextButton.scss';
+import '../styles/HomePage.scss';
+import '../styles/FunkyTextButton.scss';
 //import ReactDOMServer from 'react-dom/server'
 import { useState } from 'react';
 import { GetProjectInfos_TableMode } from "./ProjectFuncs"
 import rehypeRaw from "rehype-raw";
 import { Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { Option } from 'react-md';
 
-const draw404Project = () => {
-  return (
-    <h1>{'404 project not found !\n'}</h1>
-  )
 
-}
+
+
+
+
 
 const errorWhenLoadingProject = () => {
   return (
@@ -29,6 +30,85 @@ const errorWhenLoadingProject = () => {
 }
 
 
+
+  const draw404Project = () => {
+
+  return (
+    <>
+    <h1>{'404 project not found !\n'}</h1>
+    <p>Le projet que vous essayez de consulter à été supprimé ou déplacé. Je vous invite à retourner sur la page principale du site : </p>
+    <Link to="/Jub_Biography/home">Page principale</Link>
+    </>
+  )
+}
+
+
+
+/////// Refresh le markdown
+//SetProjectMed : method(string, project)
+//Modify Content : method(string) => string
+  async function RefreshLoadMarkdown(project, setProjectMdMethod  : (markdownResult : any, project : any) => void, modifyContentMethod : (argo0 : string) => string){
+
+  const projectMdFilePath = project.mainMarkdownPath
+    //const content = await (await fetch(folder + '/index.md')).text();
+
+
+    //console.log("Reading project " + projectMdFilePath)
+
+
+    if (projectMdFilePath == null) {
+
+      setProjectMdMethod(draw404Project, undefined)
+      return
+    }
+
+
+    try {
+
+
+
+      const fet = await fetch(projectMdFilePath);
+
+      //console.log(fet)
+      let content = await fet.text();
+
+
+
+      if (content.includes("<!DOCTYPE html>")) {
+        setProjectMdMethod(errorWhenLoadingProject(), project)
+        return
+      }
+
+
+      //content = ChangeNextPreviousProjects(content) // Modification des balises <nextprojects>
+      content = modifyContentMethod(content)//Supression / affichage des balises <history>
+      
+
+      if(!/(?:<title>[\s\S]*?<\/title>|<title\/>)/g.test(content))
+        content = "<title></title>" + content
+      
+      
+      
+
+
+
+
+
+      setProjectMdMethod(content, project)
+      //findProjectTitleCallBack(project, stateGenerated)//Déclenchera une update de la page si une image est trouvée
+
+      //console.log("Md loaded!" + content)
+
+
+
+    } catch (error) {
+      console.error(error);
+      setProjectMdMethod(errorWhenLoadingProject(), project)
+      return
+    }
+  }
+
+
 const initialState = {
   projectNameLocker: "",
   projectMd: "",//La page Md chargée
@@ -36,8 +116,9 @@ const initialState = {
   //titleTag : (<h1>Project title</h1>)
 }
 
-const ProjectPage = (props) => {
 
+
+const ProjectPage = (props) => {
 
 
   //Setter pour les infos du projet
@@ -94,7 +175,7 @@ const ProjectPage = (props) => {
 
 
   //Liste des projets précédents/suivants, actualisé dynamiquement avec le choix du menu principal
-  let nextPreviousProjects = undefined
+  let nextPreviousProjects 
 
 
   if (props?.project === undefined) {
@@ -105,79 +186,17 @@ const ProjectPage = (props) => {
 
 
   const project = props.project
-  const projectMdFilePath = project.mainMarkdownPath
 
 
 
 
-
-
-  async function refreshMd() {
-
-    //const content = await (await fetch(folder + '/index.md')).text();
-
-
-    //console.log("Reading project " + projectMdFilePath)
-
-
-    if (projectMdFilePath == null) {
-
-      setProjectMd(draw404Project, undefined)
-      return
-    }
-
-
-    try {
-
-
-
-      const fet = await fetch(projectMdFilePath);
-
-      //console.log(fet)
-      let content = await fet.text();
-
-
-
-      if (content.includes("<!DOCTYPE html>")) {
-        setProjectMd(errorWhenLoadingProject(), project)
-        return
-      }
-
-
-      //content = ChangeNextPreviousProjects(content) // Modification des balises <nextprojects>
-      content = ShowHistoryMode(content, state.historyDisplay)//Supression / affichage des balises <history>
-      
-
-      if(!/(?:<title>[\s\S]*?<\/title>|<title\/>)/g.test(content))
-        content = "<title></title>" + content
-      
-      
-      
-
-
-
-
-
-      setProjectMd(content, project)
-      //findProjectTitleCallBack(project, stateGenerated)//Déclenchera une update de la page si une image est trouvée
-
-      //console.log("Md loaded!" + content)
-
-
-
-    } catch (error) {
-      console.error(error);
-      setProjectMd(errorWhenLoadingProject(), project)
-      return
-    }
-  }
 
 
 
 
   if (state.projectNameLocker.localeCompare(project.folderName) !== 0) {
     console.log("Trying to load " + project.folderName)
-    refreshMd();
+    RefreshLoadMarkdown( project, setProjectMd , (currentContend) => ShowHistoryMode(currentContend, state.historyDisplay));
   }
 
 
@@ -187,7 +206,7 @@ const ProjectPage = (props) => {
 
   function GetNextPreviousProject() {
     //On cherche le projet suivant et précédent
-    const projects = JSON.parse(window.sessionStorage.getItem("renderedProjects"));
+    const projects = JSON.parse(window.sessionStorage.getItem("renderedProjects") ?? "");
     let result = <></>
 
     if (projects != null) {
@@ -260,7 +279,7 @@ const ProjectPage = (props) => {
 
       <div className="ReactMarkdown">
         <ReactMarkdown
-          rehypePlugins={[rehypeRaw]}
+          rehypePlugins={rehypeRaw}//ca fonctionne bien
           transformImageUri={uri =>
             uri.startsWith("http") ? uri : `${project.folderPath + "/"}${uri}`
           }
@@ -284,7 +303,7 @@ const ProjectPage = (props) => {
             //Changement de la navigation a travers les pages
             a: (props) => {
               // console.log(props)
-              return <Link to={props.href}>{props.children}</Link>
+              return <Link to={props.href??""}>{props.children}</Link>
             },
 
             autotab: () => <>{GetProjectInfos_TableMode(project)}</>,
@@ -331,6 +350,6 @@ const ProjectPage = (props) => {
 
 
 
-export default ProjectPage
+export {ProjectPage, RefreshLoadMarkdown}
 
 

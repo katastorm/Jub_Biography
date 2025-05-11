@@ -1,7 +1,21 @@
 :root {
   --fontSizeLittle: 1.9vh;
-  --fontSizeNormal: 2.2vh;
-  --fontSizeLarge: 2.6vh;
+  --fontSizeMedium: 2.20vh;
+  --fontSizeNormal: 2.40vh;
+  --fontSizeLarge: 2.85vh;
+  --fontSizeLarger: 3.6vh;
+  --fontSizeTitle1: 5vh;
+  
+  --body-color:#18181f;
+  --grey1:rgb(107, 110, 121);
+  --grey2:rgb(34, 35, 49);
+  --grey3:rgb(196, 195, 207);
+  --grey4:rgb(38, 40, 56);
+
+
+  --textWhite:rgb(220, 220, 220);
+  --textColor1:rgb(123, 154, 255);
+  
 }
 
 html {
