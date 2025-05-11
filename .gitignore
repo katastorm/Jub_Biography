@@ -22,3 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 Excel/~$unityProjects.xlsx
+/Excel
+*.bat
+/private
+old_page.md
