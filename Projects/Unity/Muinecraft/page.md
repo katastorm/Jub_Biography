@@ -4,18 +4,17 @@
 
 ## Description
 
-Jeu fortement inspiré de `Minecraft`.
+Jeu fortement inspiré de `Minecraft` avec une fréquence de bloc 2x fois plus élevée, une render-distance 2x plus élevée aussi, de nouvelles fonctionnalités telles que l'import de mods, de scripts en lua, de nouveaux models 3D...
 
 <autotab></autotab>
 
-## Contexte
-
-J'ai beaucoup joué à `Minecraft` étant plus jeune. Mais j'avais des difficultés à accepter qu'un jeu aussi simple visuellement puisse lagger sur certain ordinateurs. Je me suis lancé dans l'idée de recoder un minecraft, mais avec une fréquence de bloc 2x fois plus élevée, et avec une render-distance 2x plus élevée aussi. Je voulais implémenter beaucoup de fonctionnalités non supporté de base par minecraft, tel que l'import de mods, de scripts en lua, de nouveaux models 3D...
+ 
 
 ## Développement
 
 
-Generer des chunks de (32 * 32 * 128) blocs, dans un champ de vision de 16 chunks, disont carré, donc 16 * 16 chunks à afficher, on obtient 33.54 million de cubes à afficher. Okay. Par où commencer ? Comment stoquer tout ça... Je me suis beaucoup interessé aux meshs, aux matérieux et aux tableaux pendant cette phase du développement.
+Beaucoup de contraintes techniques dans ce projet. Par exemple, pour la génération et l'affichage d'un grand nombre de cubes. Pour générer des chunks de (32 * 32 * 128) blocs, dans un champ de vision simplifié à 16x16 chunks, on obtient 33.54 million de cubes à afficher.
+Il y a eu beaucoup de veille et de travail sur les meshs, les matérieux et des Uvs pendant la premiere phase de développement.
 
 
 
@@ -27,7 +26,8 @@ Generer des chunks de (32 * 32 * 128) blocs, dans un champ de vision de 16 chunk
 *premières ébauches du développement des meshs*
 
 
-Pendant cette première phase de dev, tout était "Critique". Le type de données utilisés pour les cubes, la façon dont ils étaient générés, puis affichés. Chacunes des ces étapes seraient répétés 33.54 millions de fois durant le jeu, il fallait donc prendre des précautions. Assez rapidmeent, l'affichage de gigantesques meshs multi-matériaux fut apréhendé. On eu alors des premiers prototypes de terrains. La génération était faite avec des noises (cellular noise pour les biomes). Un gros problème aura été de trouver une manière de connecter les biomes entre eux, de manière "smooth", mais grâce au math, on peut tout faire.
+
+  Une fois l'affichage de gigantesques meshs multi-matériaux appréhendé, j'ai pu commencer les premiers prototypes de terrains. La génération était faite avec des noises (cellular noise pour les biomes). Un gros problème aura été de trouver une manière de connecter les biomes entre eux, de manière "smooth", résolu par un système de noises "températures" décrivant les pourcentages d'appaitions des biomes. 
 
 <imagegroup></imagegroup>
 ![Terrain](./medias/biomes.gif)
@@ -38,16 +38,13 @@ Pendant cette première phase de dev, tout était "Critique". Le type de donnée
 
 
 
-
- Je me suis intéréssé à la génération de cavernes basiques. Le résultat était super, mais la map mettait beaucoup de temps à générer, même avec des analyse de la complexité faites au préalable.
-
 <imagegroup></imagegroup>
 ![Les cavernes](./medias/idee2.jpg)
 ![Les cavernes](./medias/mesh5.jpg)
 
 *Test de génération de cavernes*
 
-A partir de ce moment là, des gens étaient interessés pour travailler sur le projet avec moi (`Victoire` et `Brian` pour les intimes). Victoire se chargeait d'implémenter un système de mods, avec chargement de ressources et scripts lua. Brian travaillait sur une généation de terrain plus réaliste et plus complête (système multi-noise avec des "températures" etc.). Pendant ce temps je travaillais sur l'interface de l'inventaire et l'importation de structures depuis `MagicaVoxel`. `MagicaVoxel` c'est un logiciel de création de models 3D en voxel.
+J'ai ensuite travaillé avec deux autres développeurs. L'un se chargeait d'implémenter un système de mods, avec chargement de ressources et scripts lua. L'autre travaillait sur une généation de terrain plus réaliste et plus complête. Pendant ce temps je travaillais sur l'interface de l'inventaire et l'importation de structures depuis `MagicaVoxel`, un logiciel de création de models 3D en voxel.
 
 <imagegroup></imagegroup>
 ![Importation de fichiers en voxels](./medias/voxel1.jpg)
@@ -55,30 +52,30 @@ A partir de ce moment là, des gens étaient interessés pour travailler sur le 
 
 *A gauche, un arbre visualisé dans l'editeur `MagicaVoxel`, à droite : des arbres importés dynamiquement dans le projet*
 
-## Produit final
 
-Le prototype est jouable, avec une arrivée sur la map dont la génération est infinie. Il existe 5 biomes différents, et le plusieurs joueurs peuvent se connecter sur le même map. Les fonctionnalités d'inventaire, de gestion des objets ainsi que le système de pioche sont fonctionnelles.
-- Pas assez de veille à été faite sur les manières des gerer des milliards d'objets dans unity. L'utilisation de compute shaders pour le calcul des blocks aurait clairement été une meilleure solution que d'utiliser le CPU pour generer les meshes
-- Montée en compétence sur la manipulation de vertex/création de modèles 3D
-- Montée en compétence niveau profiling / optimisations
+Le prototype est jouable. Voici quelques fonctionnalités notables :
 
+- Plusieurs joueurs peuvent se connecter en réseau sur la même map via *Photon*. 
+- Les fonctionnalités d'inventaire, de gestion des objets ainsi que leur tenue en main.
+- Système de pioche et de destruction du terrain.
+- Systèmes de génération de cavernes par biomes.
 
-## Ressenti
+</br>
 
-Du fait de la complexité du projet, chaque étape réussie était très valorisante, et j'apprenais beaucoup de choses. Même si le jeu a un statut de prototype, il a eu une place importante dans le développement de mes compétences techniques.
+*Axe d'amélioration*
+Pas assez de veille sur les manières des gérer des milliards d'objets dans UNITY, l'utilisation d'un compute shader aurait clairement été une meilleure solution que d'utiliser le CPU pour generer les meshes.
+
 
 ![pickaxe anim](./medias/muinekarfPickaxe.gif)
 
-
-## Mode histoire
 
 
 <history>
 *[Infos en vrac]*
 
-Par rapport au shéma sur les 3 cubes, j'ai choisi l'option 2, qui permet
-- De ne pas générer les faces inutilisés
-- D'afficher une partie de la texture différente sur chaque faces (4 uvs différents/Faces)
+Par rapport au schéma sur les 3 cubes, j'ai choisi l'option 2, qui permet
+- De ne pas générer les faces inutilisées
+- D'afficher une partie de la texture différente sur chaque face (4 uvs différents/face)
 
 
 Avec le développement de ce jeu, j'ai pu découvrir combien la génération procédurale m'intéresse et me motive !

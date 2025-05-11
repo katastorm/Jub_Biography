@@ -12,7 +12,7 @@ L'Historycon, c'est un projet de jeu mobile. Le concept est de pouvoir rédiger 
 
 
 ## Contexte
-Pendant mon DUT informatique, on a eu des cours en base de données SQL. Mettre en place une base de données, des requetes sql... J'ai trouvé tout ca trés simple. Je me suis donc lancé dans ce projet avec pour but de mettre en avant ces connaissance, afin d'avoir une application de partage d'histoires.
+Pendant mon DUT informatique, on a eu des cours en base de données SQL. Mettre en place une base de données, des requetes sql... J'ai trouvé tout ca très simple. Je me suis donc lancé dans ce projet avec pour but de mettre en avant ces connaissance, afin d'avoir une application de partage d'histoires.
 
 
 ## Développement

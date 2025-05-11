@@ -19,6 +19,6 @@ On peut se déplacer, s'accroupir, sauter, se battre en donnant des coup de poin
 
 ![](./medias/img2.png)
 
-J'aime beaucoup ce prototype car il met en avant un univers trés personnel auxquel je tiens beaucoup.
+J'aime beaucoup ce prototype car il met en avant un univers très personnel auxquel je tiens beaucoup.
 
 <nextprojects></nextprojects>
